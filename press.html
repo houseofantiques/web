@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الصحافة | بيت التحفيات</title>
+  <meta name="description" content="أرشيف الصحف والمجلات التي كتبت عن بيت التحفيات من 1971 إلى 2002." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="press">
+  <div class="shell">
+
+    <!-- نفس الهيدر -->
+    <header class="topbar isSolid" id="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brandText">
+          <div class="t1" data-i18n="brand1">بيت التحفيات</div>
+          <div class="t2" data-i18n="brand2">House of Antiques</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav_home">الرئيسية</a>
+        <span class="dot"></span>
+        <a href="about.html" data-i18n="nav_about">نبذة</a>
+        <span class="dot"></span>
+        <a href="store.html" data-i18n="nav_store">المتجر</a>
+        <span class="dot"></span>
+        <a href="press.html" data-i18n="nav_press">الصحافة</a>
+        <span class="dot"></span>
+        <a href="tour.html" data-i18n="nav_tour">الجولة</a>
+      </nav>
+
+      <div class="topRight">
+        <div class="lang">
+          <button type="button" data-lang="ku">KU</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="ar" class="active">AR</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="pressHero">
+      <div class="pressHeroInner reveal in">
+        <div class="kicker">1971 — 2002</div>
+        <h1 class="h1" style="font-size:52px; margin-top:6px;" data-i18n="press_title">الصحافة</h1>
+        <p class="sub" data-i18n="press_sub">
+          أرشيف مختار من الصحف والمجلات التي تناولت بيت التحفيات عبر السنوات.
+        </p>
+      </div>
+    </section>
+
+    <!-- FILTERS -->
+    <section class="pressControls">
+      <div class="pressControlsInner reveal">
+        <div class="chipRow" id="yearChips"></div>
+        <div class="pressSearch">
+          <input id="pressSearch" type="search" placeholder="ابحث… (اسم الجريدة / العنوان)" />
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID -->
+    <section class="pressGridWrap">
+      <div class="pressGrid" id="pressGrid"></div>
+    </section>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lbClose" id="lbClose" aria-label="close">×</button>
+    <img class="lbImg" id="lbImg" alt="Press image" />
+    <div class="lbMeta" id="lbMeta"></div>
+  </div>
+
+  <script src="app.js"></script>
+
+  <script>
+    // ✅ بيانات تجريبية (بدلي الصور لاحقاً)
+    // ضيفي كل صورة: src + year + title + source
+    const PRESS_ITEMS = [
+      { year: 1971, title: "مقال عن بيت التحفيات", source: "مجلة/جريدة", src: "assets/press/1971-01.jpg" },
+      { year: 1978, title: "تقرير ثقافي", source: "مجلة/جريدة", src: "assets/press/1978-01.jpg" },
+      { year: 1989, title: "افتتاح وتغطية", source: "مجلة/جريدة", src: "assets/press/1989-01.jpg" },
+      { year: 1996, title: "بيت التحفيات في بغداد", source: "مجلة/جريدة", src: "assets/press/1996-01.jpg" },
+      { year: 2002, title: "التحف والتراث", source: "مجلة/جريدة", src: "assets/press/2002-01.jpg" },
+    ];
+
+    // years chips (1971 → 2002) + "الكل"
+    const years = Array.from(new Set(PRESS_ITEMS.map(x=>x.year))).sort((a,b)=>a-b);
+    const chips = ["الكل", ...years];
+
+    let activeYear = "الكل";
+    let q = "";
+
+    const grid = document.getElementById("pressGrid");
+    const chipRow = document.getElementById("yearChips");
+    const search = document.getElementById("pressSearch");
+
+    function makeChip(label){
+      const b = document.createElement("button");
+      b.className = "chip";
+      b.textContent = label;
+      b.addEventListener("click", ()=>{
+        activeYear = label;
+        renderChips();
+        renderGrid();
+      });
+      return b;
+    }
+
+    function renderChips(){
+      chipRow.innerHTML = "";
+      chips.forEach(c=>{
+        const b = makeChip(c);
+        if (String(c) === String(activeYear)) b.classList.add("active");
+        chipRow.appendChild(b);
+      });
+    }
+
+    function matches(item){
+      const yearOk = (activeYear === "الكل") || (String(item.year) === String(activeYear));
+      if (!yearOk) return false;
+
+      if (!q) return true;
+      const hay = `${item.title} ${item.source} ${item.year}`.toLowerCase();
+      return hay.includes(q.toLowerCase());
+    }
+
+    function renderGrid(){
+      grid.innerHTML = "";
+
+      const items = PRESS_ITEMS.filter(matches);
+      items.forEach(item=>{
+        const card = document.createElement("button");
+        card.className = "pressCard reveal in";
+        card.type = "button";
+
+        const thumb = document.createElement("div");
+        thumb.className = "pressThumb";
+        thumb.style.backgroundImage = `url("${item.src}")`;
+
+        const meta = document.createElement("div");
+        meta.className = "pressMeta";
+
+        const y = document.createElement("div");
+        y.className = "pressYear";
+        y.textContent = item.year;
+
+        const t = document.createElement("div");
+        t.className = "pressTitle";
+        t.textContent = item.title;
+
+        const s = document.createElement("div");
+        s.className = "pressSource";
+        s.textContent = item.source;
+
+        meta.appendChild(y);
+        meta.appendChild(t);
+        meta.appendChild(s);
+
+        card.appendChild(thumb);
+        card.appendChild(meta);
+
+        card.addEventListener("click", ()=> openLB(item));
+        grid.appendChild(card);
+      });
+
+      if (!items.length){
+        const empty = document.createElement("div");
+        empty.className = "pressEmpty";
+        empty.textContent = "لا توجد نتائج حالياً.";
+        grid.appendChild(empty);
+      }
+    }
+
+    // Lightbox
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lbImg");
+    const lbMeta = document.getElementById("lbMeta");
+    const lbClose = document.getElementById("lbClose");
+
+    function openLB(item){
+      lbImg.src = item.src;
+      lbMeta.textContent = `${item.year} — ${item.source} — ${item.title}`;
+      lb.classList.add("show");
+      lb.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+    }
+    function closeLB(){
+      lb.classList.remove("show");
+      lb.setAttribute("aria-hidden","true");
+      document.body.style.overflow = "";
+      lbImg.src = "";
+    }
+    lbClose.addEventListener("click", closeLB);
+    lb.addEventListener("click", (e)=>{ if (e.target === lb) closeLB(); });
+    window.addEventListener("keydown", (e)=>{ if (e.key === "Escape") closeLB(); });
+
+    // Search
+    search.addEventListener("input", ()=>{
+      q = search.value.trim();
+      renderGrid();
+    });
+
+    // Init
+    renderChips();
+    renderGrid();
+  </script>
+
+  <script>
+    // reveal
+    (function(){
+      const els = Array.from(document.querySelectorAll(".reveal"));
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if (e.isIntersecting){
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(el=> io.observe(el));
+    })();
+  </script>
+</body>
+</html>
