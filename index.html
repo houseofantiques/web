@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بيت التحفيات | House of Antiques</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#home" aria-label="بيت التحفيات">
+        <span class="brand__dot"></span>
+        <span class="brand__stack">
+          <span class="brand__ar" data-i18n="brandAr">بيت التحفيات</span>
+          <span class="brand__en" data-i18n="brandEn">House of Antiques</span>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <button class="nav__burger" type="button" aria-label="Menu" aria-expanded="false">☰</button>
+        <div class="nav__links" id="navLinks">
+          <a href="about.html" data-i18n="navAbout">نبذة</a>
+          <a href="#entrances" data-i18n="navExplore">استكشف</a>
+          <a href="#stats" data-i18n="navStats">الأرقام</a>
+          <a href="#timeline" data-i18n="navTimeline">الخط الزمني</a>
+        </div>
+      </nav>
+
+      <div class="lang">
+        <button class="chip is-active" data-lang="ar" type="button">AR</button>
+        <button class="chip" data-lang="en" type="button">EN</button>
+        <button class="chip" data-lang="ku" type="button">KU</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <!-- استخدم نفس اسماء صورك الحالية -->
+        <img class="hero__bgImg is-active" src="assetshero-1.jpg" alt="">
+        <img class="hero__bgImg" src="assetshero-2.jpg" alt="">
+        <img class="hero__bgImg" src="assetshero-3.jpg" alt="">
+         <img class="hero__bgImg" src="assetshero-4.jpg" alt="">
+      </div>
+
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="wrap hero__content">
+        <div class="hero__card">
+          <div class="hero__meta">
+          </div>
+
+          <h1 class="hero__title">
+            <span data-i18n="heroTitle1">مرحبًا بكم في</span>
+            <span class="hero__titleEm" data-i18n="heroTitle2">بيت التحفيات</span>
+          </h1>
+
+          <p class="hero__desc" data-i18n="heroDesc">
+            ذاكرة بغداد… بيت يجمع التحف النادرة والسجاد والنحاس والخشب والكريستال والأعمال الفنية في تجربة متحفية فاخرة.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn" href="#entrances" data-i18n="ctaExplore">استكشف الأقسام</a>
+            <a class="btn btn--ghost" href="#about" data-i18n="ctaMore">اقرأ أكثر</a>
+          </div>
+
+          <div class="hero__controls">
+            <button class="icon" type="button" id="prevHero" aria-label="Prev">‹</button>
+            <div class="dots" id="heroDots" aria-label="Hero dots"></div>
+            <button class="icon" type="button" id="nextHero" aria-label="Next">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTRANCES (6 tiles) -->
+    <section class="section" id="entrances">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2" data-i18n="entrancesTitle">مداخل الصفحات</h2>
+          <p class="p" data-i18n="entrancesDesc">اختاري وجهتك بسرعة…</p>
+        </div>
+<section class="section" id="entrances">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="h2" data-i18n="entrancesTitle">مداخل الصفحات</h2>
+      <p class="p" data-i18n="entrancesDesc">اختاري وجهتك بسرعة…</p>
+    </div>
+
+    <div class="grid6">
+
+      <!-- 1) ABOUT -->
+      <a class="tile" href="about.html">
+        <div class="tile__img">
+          <img src="assetscard-aboutus.jpg" alt="About">
+        </div>
+        <div class="tile__cap">
+          <div class="tag" data-i18n="t1Tag">نبذة</div>
+          <div class="ttl" data-i18n="t1Title">نبذة عن بيت التحفيات</div>
+          <div class="sub" data-i18n="t1Sub">تعرفي على القصة كاملة</div>
+        </div>
+      </a>
+
+      <!-- 2) STORE -->
+      <a class="tile" href="https://houseofantiques.github.io/mtjer01/" target="_blank" rel="noopener">
+        <div class="tile__img">
+          <img src="assetscard-store.jpg" alt="Store">
+        </div>
+        <div class="tile__cap">
+          <div class="tag" data-i18n="t2Tag">المتجر</div>
+          <div class="ttl" data-i18n="t2Title">تسوق التحف</div>
+          <div class="sub" data-i18n="t2Sub">قطع نادرة</div>
+        </div>
+      </a>
+
+      <!-- 3) BOOKING -->
+      <a class="tile" href="booking.html">
+        <div class="tile__img">
+          <img src="assetscard-booking.jpg" alt="Booking">
+        </div>
+        <div class="tile__cap">
+          <div class="tag" data-i18n="t3Tag">الحجز</div>
+          <div class="ttl" data-i18n="t3Title">احجزي زيارتك</div>
+          <div class="sub" data-i18n="t3Sub">زيارة • تصوير • فعالية</div>
+        </div>
+      </a>
+
+      <!-- 4) PRESS -->
+      <a class="tile" href="press.html">
+        <div class="tile__img">
+          <img src="assetscard-press.jpg" alt="Press">
+        </div>
+        <div class="tile__cap">
+          <div class="tag" data-i18n="t4Tag">صحافة</div>
+          <div class="ttl" data-i18n="t4Title">تغطيات وأخبار</div>
+          <div class="sub" data-i18n="t4Sub">مقالات • فيديو</div>
+        </div>
+      </a>
+
+      <!-- 5) AUCTION -->
+      <a class="tile" href="auction.html">
+        <div class="tile__img">
+          <img src="assetscard-auction.jpg" alt="Auction">
+        </div>
+        <div class="tile__cap">
+          <div class="tag" data-i18n="t5Tag">المزاد</div>
+          <div class="ttl" data-i18n="t5Title">المزاد القادم</div>
+          <div class="sub" data-i18n="t5Sub">تفاصيل وحجز</div>
+        </div>
+      </a>
+
+      <!-- 6) TOUR (internal page) -->
+      <a class="tile" href="tour.html">
+        <div class="tile__img">
+          <img src="assetscard-tour.jpg" alt="Tour">
+        </div>
+        <div class="tile__cap">
+          <div class="tag" data-i18n="t6Tag">جولة 360</div>
+          <div class="ttl" data-i18n="t6Title">جولة افتراضية</div>
+          <div class="sub" data-i18n="t6Sub">استكشاف قبل الزيارة</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- ABOUT + STATS -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2" data-i18n="aboutTitle">بيت غنيّ بالتفاصيل</h2>
+          <p class="p" data-i18n="aboutDesc">من متجر أنتيك إلى وجهة متحفية وثقافية…</p>
+        </div>
+
+        <div class="stats" id="stats">
+          <div class="stat"><div class="num" data-count="106">0</div><div class="lbl" data-i18n="s1">عمر البيت (سنة)</div></div>
+          <div class="stat"><div class="num" data-count="14">0</div><div class="lbl" data-i18n="s2">عدد الغرف</div></div>
+          <div class="stat"><div class="num" data-count="12000">0</div><div class="lbl" data-i18n="s3">عدد التحف</div></div>
+          <div class="stat"><div class="num" data-count="5000">0</div><div class="lbl" data-i18n="s4">عدد الزوار منذ الثمانينات</div></div>
+        </div>
+
+        <div class="cards3">
+          <div class="card">
+            <h3 data-i18n="c1t">تجربة متحفية فاخرة</h3>
+            <p data-i18n="c1p">تصميم داكن أنيق ومسارات واضحة للزيارة ومداخل سريعة للمتجر والحجز والجولة.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="c2t">هوية بغداد داخل بيت</h3>
+            <p data-i18n="c2p">السجاد والنحاس والخشب والكريستال… كل قطعة تحمل قصة وتاريخ.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="c3t">UX قوي للموبايل</h3>
+            <p data-i18n="c3p">أزرار كبيرة، سكرول ناعم، حركات خفيفة، وتجربة محترمة بدون ثقل.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section" id="timeline">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2" data-i18n="timelineTitle">الخط الزمني</h2>
+          <p class="p" data-i18n="timelineDesc">ثلاث محطات صنعت قصة البيت</p>
+        </div>
+
+        <div class="timeline">
+          <div class="years">
+            <button class="y is-active" data-year="1989" type="button">1989</button>
+            <button class="y" data-year="2004" type="button">2004</button>
+            <button class="y" data-year="2022" type="button">2022</button>
+          </div>
+
+          <div class="tlCard" id="tlCard">
+            <div class="tlImg"><img src="assetstimeline1989.jpg" alt=""></div>
+            <div class="tlBody">
+              <div class="tlYear">1989</div>
+              <h3 id="tlTitle">الافتتاح</h3>
+              <p id="tlText">في عام 1989 بدأ بيت التحفيات كمتجر أنتيك وتحف نادرة بذوق رفيع.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footerSpace"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div>
+          <div class="footT" data-i18n="brandAr">بيت التحفيات</div>
+          <div class="footS">Baghdad • House of Antiques</div>
+        </div>
+        <a class="toTop" href="#home" data-i18n="top">للأعلى</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
