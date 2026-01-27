@@ -1,0 +1,855 @@
+/* ==========
+   About — Minimal Editorial + Dark Story Stages (FIXED SIZES)
+   - تصغير الستيج + الكارد + الصور
+   - ترتيب قوي للموبايل
+   - Timeline Slider مرتب وبدون تلخبط
+========== */
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
+
+/* =========================
+   TOKENS
+========================= */
+:root{
+  --max: 1180px;
+
+  --bg:#fff9ee;
+  --ink:#111111;
+  --muted:#6a6a6a;
+  --line:rgba(17,17,17,.10);
+
+  --dark:#0f1010;
+  --dark2:#141616;
+  --cream:#efe9df;
+  --creamMuted:rgba(239,233,223,.72);
+
+  --radius:18px;
+  --shadow: 0 18px 60px rgba(0,0,0,.28);
+  --shadow2: 0 14px 34px rgba(0,0,0,.32);
+
+  --gap: 26px;
+}
+
+/* =========================
+   BASE
+========================= */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--ink);
+  background: var(--bg);
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+button{font-family:inherit}
+.wrap{
+  width:min(var(--max), calc(100% - 32px));
+  margin-inline:auto;
+}
+.srOnly{
+  position:absolute;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);
+  white-space:nowrap;border:0;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background: rgba(245,242,236,.78);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand__dot{
+  width:12px;height:12px;border-radius:999px;
+  background:#151515;opacity:.9;
+}
+.brand__name{
+  font-family:"Inter","Cairo",sans-serif;
+  font-weight:600;
+  letter-spacing:.2px;
+  font-size:14px;
+  opacity:.9;
+}
+.topbar__nav{display:flex;align-items:center;gap:18px}
+.navlink{
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:13px;
+  opacity:.72;
+  padding:8px 10px;
+  border-radius:999px;
+}
+.navlink:hover{opacity:1;background:rgba(0,0,0,.04)}
+.navlink.is-active{opacity:1;background:rgba(0,0,0,.06)}
+.lang{display:flex;gap:8px}
+.lang__btn{
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--ink);
+  font-size:12px;
+  padding:8px 10px;
+  border-radius:999px;
+  cursor:pointer;
+  opacity:.85;
+}
+.lang__btn:hover{opacity:1}
+.lang__btn.is-active{
+  background:#151515;color:var(--bg);
+  border-color:#151515;opacity:1;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section{padding: clamp(26px, 4vw, 52px) 0;}
+.grid{display:grid;gap:var(--gap)}
+
+/* =========================
+   LIGHT GRID
+========================= */
+.grid--light{
+  grid-template-columns: 1.05fr .95fr;
+  grid-template-areas:
+    "lead hero"
+    "content content"
+    "wide wide";
+  align-items:start;
+}
+.lead{grid-area:lead}
+.heroFigure{grid-area:hero}
+.contentBlock{grid-area:content}
+.wideArt{grid-area:wide}
+
+.kicker{
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0 0 10px;
+}
+.title{
+  margin:0 0 18px;
+  font-size: clamp(30px, 3.2vw, 50px);
+  line-height:1.05;
+  letter-spacing:-.02em;
+}
+.metaRow{display:flex;flex-wrap:wrap;gap:14px;padding-top:6px}
+.meta{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 14px;
+  display:flex;
+  gap:8px;
+  align-items:baseline;
+}
+.meta__label{
+  font-size:11px;color:var(--muted);
+  font-family:"Inter","Cairo",sans-serif;
+}
+.meta__value{
+  font-size:12px;
+  font-family:"Inter","Cairo",sans-serif;
+  opacity:.92;
+}
+.heroFigure{
+  border-radius: var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.heroFigure__img{
+  width:100%;
+  aspect-ratio: 4 / 3;
+  object-fit:cover;
+}
+.contentBlock{padding-top:6px;display:grid;gap:18px}
+.body{
+  margin:0;
+  font-size:15px;
+  line-height:1.85;
+  color: rgba(17,17,17,.88);
+  max-width: 72ch;
+}
+.infoTable{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: rgba(255,255,255,.55);
+}
+.infoRow{
+  display:grid;
+  grid-template-columns: 220px 1fr;
+  gap:16px;
+  padding:14px 16px;
+  border-bottom:1px solid var(--line);
+}
+.infoRow:last-child{border-bottom:0}
+.infoKey{
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:12px;
+  color:var(--muted);
+}
+.infoVal{
+  font-size:13px;
+  line-height:1.7;
+  color: rgba(17,17,17,.9);
+}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:9px 12px;
+  font-size:12px;
+  background: rgba(0,0,0,.02);
+  opacity:.9;
+}
+.wideArt{
+  border-radius: 22px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.wideArt__img{
+  width:100%;
+  aspect-ratio: 16 / 6;
+  object-fit:cover;
+}
+
+/* =========================
+   DARK SECTION
+========================= */
+.section--dark{
+  background: linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
+  color: var(--cream);
+}
+.grid--dark{gap:18px}
+
+/* =========================
+   STORY STAGE (SIZES FIXED)
+   - كان ضخم عندك. هسه مضبوط.
+========================= */
+.storyStage{
+  position:relative;
+  border-radius: 24px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.10);
+
+  /* ✅ تصغير الارتفاع */
+  min-height: 520px;
+  max-height: 620px;
+
+  background-image:
+    radial-gradient(60% 90% at 70% 20%, rgba(255,255,255,.10) 0%, rgba(0,0,0,0) 55%),
+    var(--bg);
+  background-position:center, center;
+  background-size:cover, cover;
+  background-repeat:no-repeat, no-repeat;
+}
+
+/* طبقة تغميق خفيفة حتى النص يقرأ */
+.storyStage::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.45) 0%,
+    rgba(0,0,0,.18) 45%,
+    rgba(0,0,0,.05) 100%
+  );
+  pointer-events:none;
+}
+
+/* =========================
+   OVERLAY CARD (SMALLER + CLEAN)
+========================= */
+.overlayCard{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  z-index:2;
+
+  /* RTL default = على اليمين */
+  inset-inline-end: 22px;
+  inset-inline-start: auto;
+
+  /* ✅ تصغير الكارد */
+  width: min(560px, calc(100% - 44px));
+  display:grid;
+  grid-template-columns: 190px 1fr;
+
+  background: rgba(245,242,236,.94);
+  color:#111;
+  border-radius: 20px;
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(8px);
+}
+html[dir="ltr"] .overlayCard{
+  inset-inline-start: 22px;
+  inset-inline-end:auto;
+}
+
+.overlayCard__media{
+  background:#fff;
+  border-inline-end:1px solid rgba(0,0,0,.08);
+}
+.overlayCard__media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  /* ✅ لا تخليها طويلة زيادة */
+  aspect-ratio: 3 / 4;
+}
+
+.overlayCard__text{
+  padding: 16px 16px 14px;
+  display:grid;
+  gap:8px;
+  align-content:start;
+}
+.overlayCard__kicker{
+  margin:0;
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color: rgba(17,17,17,.62);
+}
+.overlayCard__title{
+  margin:0;
+  font-size:20px;
+  line-height:1.2;
+  letter-spacing:-.01em;
+}
+.overlayCard__sub{
+  margin:-4px 0 0;
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:12px;
+  color: rgba(17,17,17,.68);
+}
+.overlayCard__body{
+  margin:6px 0 0;
+  font-size:13px;
+  line-height:1.85;
+  color: rgba(17,17,17,.86);
+  max-width: 56ch;
+
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+  -webkit-line-clamp: 6;
+}
+.overlayCard.is-open .overlayCard__body{
+  display:block;
+  -webkit-line-clamp: unset;
+}
+
+.overlayCard__meta{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+}
+.mini{
+  border:1px solid rgba(0,0,0,.10);
+  border-radius: 14px;
+  padding:10px 10px;
+  background: rgba(255,255,255,.62);
+}
+.mini__k{
+  display:block;
+  font-size:11px;
+  color:rgba(17,17,17,.55);
+  font-family:"Inter","Cairo",sans-serif;
+}
+.mini__v{
+  display:block;
+  font-size:12px;
+  color:rgba(17,17,17,.90);
+}
+
+.readMore{
+  border:1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.72);
+  color: rgba(17,17,17,.92);
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:12px;
+  cursor:pointer;
+  margin-top:2px;
+}
+html[dir="rtl"] .readMore{justify-self:start}
+html[dir="ltr"] .readMore{justify-self:end}
+.readMore:hover{background: rgba(255,255,255,.90)}
+
+/* =========================
+   MINI SHOTS (SMALLER + NO OVERLAP)
+========================= */
+.miniShots{
+  position:absolute;
+  z-index:2;
+
+  /* ✅ خليها بالزاوية المقابلة للكارد */
+  inset-inline-start: 22px;
+  bottom: 18px;
+
+  display:flex;
+  gap:10px;
+}
+html[dir="ltr"] .miniShots{
+  inset-inline-end: 22px;
+  inset-inline-start:auto;
+}
+
+.miniShot{
+  width:64px;
+  height:96px;
+  border-radius: 14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow: var(--shadow2);
+  background: rgba(0,0,0,.22);
+}
+.miniShot img{width:100%;height:100%;object-fit:cover;opacity:.95}
+
+/* =========================
+   TIMELINE SLIDER (CLEAN)
+========================= */
+.timelineBlock{
+  margin-top: 10px;
+  padding: 16px;
+  border-radius: 22px;
+  border: 1px solid rgb(50, 0, 0);
+  background: rgba(0,0,0,.22);
+  overflow:hidden;
+}
+.timelineHead{max-width:72ch;margin-bottom:12px}
+.timelineKicker{
+  margin:0 0 8px;
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color: rgba(239,233,223,.70);
+}
+.timelineTitle{margin:0 0 6px;font-size:18px}
+.timelineLead{margin:0;color:rgba(239,233,223,.68);line-height:1.8;font-size:13px}
+
+.tSlider{position:relative;margin-top:12px}
+.tViewport{
+  overflow:hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.18);
+}
+.tTrack{
+  display:flex;
+  will-change: transform;
+  transition: transform .38s ease;
+}
+.tSlide{
+  flex:0 0 100%;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 280px; /* ✅ كان كبير */
+}
+
+/* صورة السلايد */
+.tMedia{
+  position:relative;
+  border-inline-end: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  min-height: 280px;
+}
+.tMedia img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.95) contrast(1.03);
+}
+
+/* محتوى السلايد */
+.tContent{
+  padding: 14px 14px 12px;
+  display:grid;
+  gap:10px;
+  align-content:start;
+
+  background: rgba(245,242,236,.92);
+  color:#111;
+}
+.tTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tYear{
+  font-family:"Inter","Cairo",sans-serif;
+  font-weight:600;
+  font-size:12px;
+  opacity:.92;
+}
+.tTag{
+  font-size:11px;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.10);
+  background: rgba(0,0,0,.03);
+  color: rgba(17,17,17,.72);
+}
+.tText{margin:0;line-height:1.9;font-size:13px;color:rgba(17,17,17,.86)}
+
+.tNav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:38px;height:38px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.28);
+  color: rgba(239,233,223,.92);
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  z-index:3;
+}
+.tNav:hover{background: rgba(255,255,255,.08)}
+.tPrev{inset-inline-start: 10px}
+.tNext{inset-inline-end: 10px}
+
+.tDots{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  padding: 12px 0 4px;
+}
+.tDot{
+  width:8px;height:8px;border-radius:99px;
+  border:1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.08);
+  cursor:pointer;
+}
+.tDot.is-active{
+  background: rgba(239,233,223,.92);
+  border-color: rgba(239,233,223,.92);
+}
+
+/* =========================
+   DARK FOOTER ROW
+========================= */
+.darkFooter{
+  display:flex;
+  gap:18px;
+  align-items:flex-end;
+  justify-content:space-between;
+  padding: 2px 2px 0;
+}
+.darkTitle{margin:0 0 8px;font-size:18px;letter-spacing:-.01em}
+.darkBody{
+  margin:0;
+  max-width: 62ch;
+  font-size:14px;
+  line-height:1.8;
+  color: var(--creamMuted);
+}
+.ctaRow{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  background: var(--cream);
+  color:#111;
+  font-size:12px;
+  font-family:"Inter","Cairo",sans-serif;
+  border:1px solid rgba(255,255,255,.10);
+}
+.btn:hover{filter:brightness(.95)}
+.btn--ghost{
+  background: transparent;
+  color: var(--cream);
+  border:1px solid rgba(255,255,255,.22);
+}
+.btn--ghost:hover{background: rgba(255,255,255,.06)}
+.tinyMeta{
+  margin-top:10px;
+  font-size:11px;
+  color: rgba(239,233,223,.55);
+  text-align:end;
+}
+
+/* =========================
+   FOOTER (light)
+========================= */
+.footer{border-top:1px solid var(--line);padding:16px 0}
+.footer__inner{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  font-size:12px;
+  color:rgba(17,17,17,.70);
+}
+.footBrand{font-weight:700}
+.footLine{opacity:.85}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 980px){
+  .grid--light{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "lead"
+      "hero"
+      "content"
+      "wide";
+  }
+  .infoRow{grid-template-columns: 160px 1fr}
+
+  .darkFooter{flex-direction:column;align-items:flex-start}
+  .tinyMeta{text-align:start}
+}
+
+/* ✅ موبايل/تابلت: الستيج يصير “بوستر” والكارد تحت */
+@media (max-width: 760px){
+  .storyStage{
+    min-height: 420px;
+    max-height: none;
+    padding: 12px;
+  }
+
+  .overlayCard{
+    position:static;
+    transform:none;
+    width:100%;
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+  }
+
+  .overlayCard__media{
+    border-inline-end:0;
+    border-bottom:1px solid rgba(0,0,0,.08);
+  }
+  .overlayCard__media img{
+    aspect-ratio: 16 / 9; /* ✅ صورة أعرض على الموبايل */
+  }
+
+  .overlayCard__meta{grid-template-columns: 1fr}
+
+  .miniShots{
+    position:static;
+    margin-top:12px;
+    justify-content:flex-start;
+  }
+
+  .tSlide{
+    grid-template-columns: 1fr; /* ✅ السلايدر عمودي */
+    min-height: auto;
+  }
+  .tMedia{
+    border-inline-end:0;
+    border-bottom:1px solid rgba(255,255,255,.10);
+    min-height: 200px;
+  }
+  .tNav{display:none} /* على الموبايل خلي سوايب + دوتس */
+}
+
+@media (max-width: 640px){
+  .topbar__nav{display:none}
+  .brand__name{display:none}
+  .title{font-size: clamp(28px, 7vw, 38px)}
+}
+/* === CENTER overlayCard in storyStage === */
+.storyStage{ position: relative; } /* احتياط */
+
+.overlayCard{
+  inset-inline-start: 50% !important;
+  inset-inline-end: auto !important;
+  left: auto !important;
+  right: auto !important;
+
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important; /* مو translateY بس */
+}
+
+/* إذا تريد الـ miniShots هم تصير بالنص تحت */
+.miniShots{
+  inset-inline-start: 50% !important;
+  inset-inline-end: auto !important;
+  transform: translateX(-50%) !important;
+}
+/* =========================
+   FIX: Desktop wider card + Mobile layout clean
+   (paste at END of about.css)
+========================= */
+
+/* 1) Desktop / laptop: خلي الكارد أعرض شوي */
+@media (min-width: 721px){
+  .overlayCard{
+    width: min(860px, calc(100% - 72px)) !important; /* كان 720 */
+    grid-template-columns: 280px 1fr !important;     /* كان 240 */
+  }
+
+  .overlayCard__media img{
+    aspect-ratio: 4 / 5 !important; /* أقل طول من 3/4 */
+  }
+
+  /* optional: خلي الميني شوتس أصغر شوي حتى ما تزاحم */
+  .miniShot{
+    width: 66px !important;
+    height: 98px !important;
+  }
+}
+
+/* 2) Mobile: لا تخلي الكارد مطلّع/طاير */
+@media (max-width: 720px){
+  .storyStage{
+    min-height: auto !important;
+    padding: 14px !important; /* مساحة للكارد داخل الستيج */
+  }
+
+  /* الكارد يصير طبيعي داخل الستيج */
+  .overlayCard{
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  /* صورة الكارد تكون معقولة مو عملاقة */
+  .overlayCard__media img{
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+  }
+
+  /* النص لا يلتف ويلخبط */
+  .overlayCard__text{
+    padding: 14px !important;
+  }
+  .overlayCard__title{ font-size: 18px !important; }
+  .overlayCard__body{
+    -webkit-line-clamp: 5 !important;
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+  }
+
+  /* الميني شوتس تنزل تحت الكارد و تصغر */
+  .miniShots{
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    margin-top: 12px !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  .miniShot{
+    width: 56px !important;
+    height: 82px !important;
+    border-radius: 14px !important;
+  }
+}
+
+/* 3) Safety: امنع أي overflow يسبب قص/فراغ */
+.storyStage,
+.section--dark,
+.grid--dark{
+  overflow: hidden;
+}
+/* =========================
+   HARD FIX — About page
+   1) White page background
+   2) Center overlay card on desktop
+   3) Stop any black sections
+========================= */
+
+/* 1) اجبار الخلفية تصير بيضة */
+html, body{
+  background:#fff !important;
+  color:#111 !important;
+}
+
+/* إذا عندك أي سكشن غامق مسبب السواد */
+.section--dark{
+  background:#fff !important;
+  color:#111 !important;
+}
+
+/* إذا طبقة التغميق مسوية الجو كله غامق (اختياري) */
+.storyStage::before{
+  background: linear-gradient(90deg,
+    rgba(0,0,0,.18) 0%,
+    rgba(0,0,0,.10) 45%,
+    rgba(0,0,0,.00) 100%
+  ) !important;
+}
+
+/* 2) توسيط الكارد صح (لا تستخدم inset-inline-start بالـ RTL) */
+.storyStage{ position: relative; }
+
+.overlayCard{
+  left: 50% !important;
+  right: auto !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  /* تأكيد عرض مرتب */
+  width: min(860px, calc(100% - 72px)) !important;
+  grid-template-columns: 280px 1fr !important;
+}
+
+/* 3) الميني شوتس بالنص */
+.miniShots{
+  left: 50% !important;
+  right: auto !important;
+  inset-inline-start: auto !important;
+  inset-inline-end: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+/* 4) موبايل: الكارد يصير طبيعي تحت (بدون طيران) */
+@media (max-width: 720px){
+  .overlayCard{
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+  }
+  .miniShots{
+    position: static !important;
+    transform: none !important;
+    justify-content: center !important;
+    margin-top: 12px !important;
+  }
+}
+.is-hidden { display: none !important; }

@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>نبذة | بيت التحفيات</title>
+
+  <link rel="stylesheet" href="about.css" />
+
+  <script defer src="i18n.js"></script>
+  <script defer src="about.js"></script>
+</head>
+
+<body>
+  <!-- Top minimal nav -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="./index.html" aria-label="Home">
+        <span class="brand__dot"></span>
+        <span class="brand__name">House of Antiques</span>
+      </a>
+
+      <nav class="topbar__nav" aria-label="Primary">
+        <a class="navlink" href="./index.html" data-i18n="nav.home">الرئيسية</a>
+        <a class="navlink is-active" href="./about.html" data-i18n="nav.about">نبذة</a>
+        <a class="navlink" href="./gallery.html" data-i18n="nav.gallery">المعرض</a>
+      </nav>
+
+      <div class="lang">
+        <button class="lang__btn is-active" type="button" data-lang="ar">AR</button>
+        <button class="lang__btn" type="button" data-lang="en">EN</button>
+        <button class="lang__btn" type="button" data-lang="ku">KU</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======= SECTION 1 (LIGHT) ======= -->
+    <section class="section section--light">
+      <div class="wrap">
+        <div class="grid grid--light">
+
+          <div class="lead">
+            <p class="kicker" data-i18n="about.kicker">نبذة</p>
+            <h1 class="title" data-i18n="about.title">بيت التحفيات — ذاكرة بغداد</h1>
+
+            <div class="metaRow">
+              <div class="meta">
+                <span class="meta__label" data-i18n="about.meta1.label">المكان</span>
+                <span class="meta__value" data-i18n="about.meta1.value">بغداد — أبو نؤاس</span>
+              </div>
+              <div class="meta">
+                <span class="meta__label" data-i18n="about.meta2.label">التأسيس</span>
+                <span class="meta__value" data-i18n="about.meta2.value">1989</span>
+              </div>
+              <div class="meta">
+                <span class="meta__label" data-i18n="about.meta3.label">الطراز</span>
+                <span class="meta__value" data-i18n="about.meta3.value">بيت بغدادي (1920)</span>
+              </div>
+            </div>
+          </div>
+
+          <figure class="heroFigure">
+            <img class="heroFigure__img" src="assetscard-aboutus.jpg" alt="بيت التحفيات">
+            <figcaption class="srOnly" data-i18n="about.heroCaption">صورة من بيت التحفيات</figcaption>
+          </figure>
+
+          <div class="contentBlock">
+            <p class="body" data-i18n="about.body1">
+              بيت التحفيات ليس مجرد مكان لعرض القطع، بل ذاكرة حيّة لبغداد…
+            </p>
+
+            <div class="infoTable" role="table" aria-label="Info">
+              <div class="infoRow" role="row">
+                <div class="infoKey" role="cell" data-i18n="about.table.key1">المحتوى</div>
+                <div class="infoVal" role="cell" data-i18n="about.table.val1">تحف، سجاد، نحاس، فضة، كريستال، أعمال فنية</div>
+              </div>
+              <div class="infoRow" role="row">
+                <div class="infoKey" role="cell" data-i18n="about.table.key2">الهوية</div>
+                <div class="infoVal" role="cell" data-i18n="about.table.val2">متحف + متجر + قصة عائلة</div>
+              </div>
+              <div class="infoRow" role="row">
+                <div class="infoKey" role="cell" data-i18n="about.table.key3">الرؤية</div>
+                <div class="infoVal" role="cell" data-i18n="about.table.val3">إحياء التراث وإعادة تقديمه بمعايير معاصرة</div>
+              </div>
+            </div>
+
+            <div class="chips">
+              <span class="chip" data-i18n="about.chip1">قصة عائلة</span>
+              <span class="chip" data-i18n="about.chip2">متحف حي</span>
+              <span class="chip" data-i18n="about.chip3">تراث بغداد</span>
+            </div>
+          </div>
+
+          <figure class="wideArt">
+            <img class="wideArt__img" src="assetscard-prejss.jpg" alt="تفاصيل من التحف">
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= SECTION 2 (DARK / STORY STAGES) ======= -->
+<section class="section section--dark">
+  <div class="wrap">
+    
+
+    <!-- ✅ STAGES GRID (فقط الستيجز داخل هذا الـ grid) -->
+    <div class="grid grid--dark">
+
+      <!-- ===== STAGE 0: THE HOUSE ===== -->
+      <div class="storyStage" style="--bg:url('house.jpg');">
+        <article class="overlayCard" aria-label="House card">
+          <div class="overlayCard__media">
+            <img src="house.jpg" alt="بيت التحفيات">
+          </div>
+
+          <div class="overlayCard__text">
+            <p class="overlayCard__kicker" data-i18n="house.kicker">البيت</p>
+            <h2 class="overlayCard__title" data-i18n="house.title">بيت التحفيات</h2>
+            <p class="overlayCard__sub" data-i18n="house.sub">بيت بغدادي — 1920</p>
+
+            <p class="overlayCard__body" data-i18n="house.body">
+              بيت التحفيات هو بيت بغدادي قديم يعود تاريخ بنائه إلى عام 1920...
+            </p>
+
+            <button class="readMore" type="button" data-i18n="ui.more">اقرأ المزيد</button>
+
+            <div class="overlayCard__meta">
+              <div class="mini">
+                <span class="mini__k" data-i18n="house.m1k">الموقع</span>
+                <span class="mini__v" data-i18n="house.m1v">شارع أبو نؤاس</span>
+              </div>
+              <div class="mini">
+                <span class="mini__k" data-i18n="house.m2k">محطة</span>
+                <span class="mini__v" data-i18n="house.m2v">1989 — افتتاح البيت</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="miniShots" aria-hidden="true">
+          <div class="miniShot"><img src="house.jpg" alt=""></div>
+          <div class="miniShot"><img src="assetscard-aboutus.jpg" alt=""></div>
+          <div class="miniShot"><img src="assetscard-prejss.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <!-- ===== STAGE 1: GRANDFATHER ===== -->
+      <div class="storyStage" style="--bg:url('grand.jpg');">
+        <article class="overlayCard" aria-label="Grandfather card">
+          <div class="overlayCard__media">
+            <img src="grand.jpg" alt="محمد علي طاهر الألماني">
+          </div>
+
+          <div class="overlayCard__text">
+            <p class="overlayCard__kicker" data-i18n="grand.kicker">المؤسس</p>
+            <h2 class="overlayCard__title" data-i18n="grand.title">محمد علي طاهر الألماني</h2>
+            <p class="overlayCard__sub" data-i18n="grand.sub">1889 — 1988</p>
+
+            <p class="overlayCard__body" data-i18n="grand.body">
+              محمد علي طاهر الألماني (1889–1988) يُعدّ أحد الأسماء البارزة...
+            </p>
+
+            <button class="readMore" type="button" data-i18n="ui.more">اقرأ المزيد</button>
+
+            <div class="overlayCard__meta">
+              <div class="mini">
+                <span class="mini__k" data-i18n="grand.m1k">محطة</span>
+                <span class="mini__v" data-i18n="grand.m1v">محلات خان البغدادي</span>
+              </div>
+              <div class="mini">
+                <span class="mini__k" data-i18n="grand.m2k">الأمنية</span>
+                <span class="mini__v" data-i18n="grand.m2v">“لو كنت صاحب ثروة…”</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="miniShots" aria-hidden="true">
+          <div class="miniShot"><img src="grand.jpg" alt=""></div>
+          <div class="miniShot"><img src="house.jpg" alt=""></div>
+          <div class="miniShot"><img src="father.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <!-- ===== STAGE 2: FATHER ===== -->
+      <div class="storyStage" style="--bg:url('father.jpg');">
+        <article class="overlayCard" aria-label="Father card">
+          <div class="overlayCard__media">
+            <img src="father.jpg" alt="طارق محمد علي الألماني">
+          </div>
+
+          <div class="overlayCard__text">
+            <p class="overlayCard__kicker" data-i18n="father.kicker">المؤسس الفعلي</p>
+            <h2 class="overlayCard__title" data-i18n="father.title">طارق محمد علي الألماني</h2>
+            <p class="overlayCard__sub" data-i18n="father.sub">1954 — 2014</p>
+
+            <p class="overlayCard__body" data-i18n="father.body">
+              طارق محمد علي الألماني (1954–2014) هو المؤسس الفعلي لبيت التحفيات...
+            </p>
+
+            <button class="readMore" type="button" data-i18n="ui.more">اقرأ المزيد</button>
+
+            <div class="overlayCard__meta">
+              <div class="mini">
+                <span class="mini__k" data-i18n="father.m1k">محطة</span>
+                <span class="mini__v" data-i18n="father.m1v">1989 — شراء البيت</span>
+              </div>
+              <div class="mini">
+                <span class="mini__k" data-i18n="father.m2k">عصر</span>
+                <span class="mini__v" data-i18n="father.m2v">1989–2004 — ازدهار البيت</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="miniShots" aria-hidden="true">
+          <div class="miniShot"><img src="father.jpg" alt=""></div>
+          <div class="miniShot"><img src="assetscard-prejss.jpg" alt=""></div>
+          <div class="miniShot"><img src="house.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <!-- ===== STAGE 3: AZAD ===== -->
+      <div class="storyStage" style="--bg:url('azad.jpg');">
+        <article class="overlayCard" aria-label="Azad card">
+          <div class="overlayCard__media">
+            <img src="azad.jpg" alt="أزاد طارق محمد علي الألماني">
+          </div>
+
+          <div class="overlayCard__text">
+            <p class="overlayCard__kicker" data-i18n="azad.kicker">الجيل الثالث</p>
+            <h2 class="overlayCard__title" data-i18n="azad.title">أزاد طارق محمد علي الألماني</h2>
+            <p class="overlayCard__sub" data-i18n="azad.sub">إحياء البيت — 2022</p>
+
+            <p class="overlayCard__body" data-i18n="azad.body">
+              أزاد طارق محمد علي الألماني يمثل الجيل الثالث من عائلة الألماني...
+            </p>
+
+            <button class="readMore" type="button" data-i18n="ui.more">اقرأ المزيد</button>
+
+            <div class="overlayCard__meta">
+              <div class="mini">
+                <span class="mini__k" data-i18n="azad.m1k">بداية</span>
+                <span class="mini__v" data-i18n="azad.m1v">محل أنتيك بعمر 11</span>
+              </div>
+              <div class="mini">
+                <span class="mini__k" data-i18n="azad.m2k">محطة</span>
+                <span class="mini__v" data-i18n="azad.m2v">2022 — ترميم وإعادة فتح</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="miniShots" aria-hidden="true">
+          <div class="miniShot"><img src="azad.jpg" alt=""></div>
+          <div class="miniShot"><img src="house.jpg" alt=""></div>
+          <div class="miniShot"><img src="father.jpg" alt=""></div>
+        </div>
+      </div>
+
+    </div>
+    <!-- ✅ /STAGES GRID -->
+
+
+    <!-- ✅ TIMELINE (برا الـ grid حتى ما يخربط القياسات) -->
+    <section class="timelineBlock" id="timeline" aria-label="Timeline">
+      <div class="timelineHead">
+        <p class="timelineKicker" data-i18n="timeline.kicker">التايم لاين</p>
+        <h3 class="timelineTitle" data-i18n="timeline.title">محطات بيت التحفيات</h3>
+        <p class="timelineLead" data-i18n="timeline.lead">
+          
+          
+          
+          تسلسل زمني يلخص قصة البيت والعائلة عبر أكثر من قرن.
+        </p>
+      </div>
+
+      <div class="tSlider" data-slider="timeline">
+        <button class="tNav tPrev" type="button" aria-label="Previous" data-action="prev">‹</button>
+        
+
+        <div class="tViewport" tabindex="0" aria-roledescription="carousel">
+          <div class="tTrack">
+            <!-- (نفس سلايداتك بالضبط بدون تغيير) -->
+            <!-- 1 -->
+            <article class="tSlide" id="t1889">
+              <div class="tMedia">
+                <img src="assetscard-booking.jpg" alt="1889">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">1889</span>
+                  <span class="tTag" data-i18n="timeline.y1889.tag">الولادة</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y1889.text">
+                  وُلد محمد علي طاهر الألماني عام 1889 في دياربكر...
+                </p>
+              </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="tSlide" id="t1920s">
+              <div class="tMedia">
+                <img src="assetscard-auction.jpg" alt="1920s">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">1920s</span>
+                  <span class="tTag" data-i18n="timeline.y1920s.tag">الوصول إلى بغداد</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y1920s.text">
+                  مع انتقاله إلى بغداد في عشرينات القرن الماضي...
+                </p>
+              </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="tSlide" id="t1940s">
+              <div class="tMedia">
+                <img src="grand.jpg" alt="1940s">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">1940s</span>
+                  <span class="tTag" data-i18n="timeline.y1940s.tag">محلات الأنتيك</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y1940s.text">
+                  في الأربعينات امتلك عدة محلات...
+                </p>
+              </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="tSlide" id="t1954">
+              <div class="tMedia">
+                <img src="father.jpg" alt="1954">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">1954</span>
+                  <span class="tTag" data-i18n="timeline.y1954.tag">ولادة الامتداد</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y1954.text">
+                  وُلد طارق محمد علي الألماني عام 1954...
+                </p>
+              </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="tSlide" id="t1971">
+              <div class="tMedia">
+                <img src="aboutgrandfather.jpg" alt="1971">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">1971</span>
+                  <span class="tTag" data-i18n="timeline.y1971.tag">الأمنية المعلنة</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y1971.text">
+                  خلال لقاء لجريدة التآخي... «لو كنتُ صاحب ثروة...»
+                </p>
+              </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="tSlide" id="t1988">
+              <div class="tMedia">
+                <img src="house.jpg" alt="1988">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">1988</span>
+                  <span class="tTag" data-i18n="timeline.y1988.tag">الرحيل</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y1988.text">
+                  توفي محمد علي طاهر الألماني عام 1988...
+                </p>
+              </div>
+            </article>
+
+            <!-- 7 -->
+            <article class="tSlide" id="t1989">
+              <div class="tMedia">
+                <img src="assetscard-prejss.jpg" alt="1989">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">1989</span>
+                  <span class="tTag" data-i18n="timeline.y1989.tag">تحقيق الحلم</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y1989.text">
+                  اشترى طارق البيت عام 1989 وافتتحه باسم بيت التحفيات...
+                </p>
+              </div>
+            </article>
+
+            <!-- 8 -->
+            <article class="tSlide" id="t1989_2004">
+              <div class="tMedia">
+                <img src="assetscard-aboutus.jpg" alt="1989–2004">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">1989–2004</span>
+                  <span class="tTag" data-i18n="timeline.y1989_2004.tag">عصر الازدهار</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y1989_2004.text">
+                  أصبح مقصدًا للسياح والفنانين والدبلوماسيين...
+                </p>
+              </div>
+            </article>
+
+            <!-- 9 -->
+            <article class="tSlide" id="t2004">
+              <div class="tMedia">
+                <img src="aboutgrandfather.jpg" alt="2004">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">2004</span>
+                  <span class="tTag" data-i18n="timeline.y2004.tag">الإغلاق</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y2004.text">
+                  أُغلق البيت بسبب الحرب والأوضاع غير المستقرة...
+                </p>
+              </div>
+            </article>
+
+            <!-- 10 -->
+            <article class="tSlide" id="t2014">
+              <div class="tMedia">
+                <img src="assetscard-aboutus.jpg" alt="2014">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">2014</span>
+                  <span class="tTag" data-i18n="timeline.y2014.tag">انتقال الوصية</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y2014.text">
+                  توفي طارق عام 2014 تاركًا البيت أمانةً بيد الجيل الثالث...
+                </p>
+                
+              </div>
+            </article>
+
+            <!-- 11 -->
+            <article class="tSlide" id="t2022">
+              <div class="tMedia">
+                <img src="aboutgrandson.jpg" alt="2022">
+              </div>
+              <div class="tContent">
+                <div class="tTop">
+                  <span class="tYear">2022</span>
+                  <span class="tTag" data-i18n="timeline.y2022.tag">العودة والإحياء</span>
+                </div>
+                <p class="tText" data-i18n="timeline.y2022.text">
+                  عاد أزاد ليبدأ مشروع الترميم وإعادة فتح بيت التحفيات...
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <button class="tNav tNext" type="button" aria-label="Next" data-action="next">›</button>
+
+        <div class="tDots" aria-label="Pagination"></div>
+
+        <div class="timelineCta">
+          <button class="btn btn--ghost" type="button" data-action="toggleAll" data-i18n="timeline.showAll">
+            عرض كل المحطات
+          </button>
+          <a class="btn" href="./tour.html" data-i18n="cta.tour">الجولة الافتراضية</a>
+        </div>
+
+        <div class="tAll is-hidden" data-all>
+          <div class="tAllGrid"></div>
+        </div>
+      </div>
+    </section>
+    <!-- ✅ /TIMELINE -->
+
+  </div>
+</section>
