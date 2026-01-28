@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الجولة الافتراضية | بيت التحفيات</title>
+
+  <link rel="stylesheet" href="tour.css" />
+</head>
+
+<body>
+
+  <!-- ====== TOP BAR (خفيف) ====== -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="./index.html" aria-label="الصفحة الرئيسية">
+        <span class="brand__dot"></span>
+        <span class="brand__name">بيت التحفيات</span>
+      </a>
+
+      <nav class="nav" aria-label="روابط">
+        <a class="nav__link" href="./index.html">الرئيسية</a>
+        <a class="nav__link is-active" href="./tour.html">الجولة</a>
+        <a class="nav__link" href="./auction.html">المزاد</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ====== COVER (EDGE TO EDGE) ====== -->
+    <section class="tourCover" aria-label="Cover">
+      <!-- بدّل الصورة هنا -->
+      <img class="tourCover__img" src="assetscard-tour.jpg" alt="بيت التحفيات — جولة افتراضية">
+
+      <div class="tourCover__overlay">
+        <div class="tourCover__content">
+          <div class="tourCover__badge">360° • تجربة تفاعلية</div>
+
+          <h1 class="tourCover__title">جولة افتراضية</h1>
+          <p class="tourCover__sub">
+              استكشف بيت التحفيات داخل بغداد بتجربة تفاعلية سلسة 
+          </p>
+
+          <div class="tourCover__actions">
+            <button class="btn" type="button" data-scroll="#tour">
+              دخول الجولة الافتراضية
+            </button>
+
+            <a class="btn btn--ghost" href="./index.html">
+              الصفحة الرئيسية
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== TOUR SECTION ====== -->
+    <section class="section" id="tour" aria-label="Virtual Tour">
+      <div class="wrap">
+        <div class="sectionHead">
+          <h2 class="sectionTitle">ابدأ التجربة</h2>
+          <p class="sectionSub">
+            إذا كانت النت ضعيفة: انتظر ثواني… التجربة تحمل تلقائياً.
+          </p>
+        </div>
+
+        <!-- iframe داخل نفس الصفحة -->
+        <div class="tourFrame" role="region" aria-label="Matterport iframe">
+          <iframe
+            id="mpFrame"
+            title="House of Antiques Virtual Tour"
+            allow="xr-spatial-tracking; fullscreen; autoplay"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="helperRow">
+          <button class="miniBtn" type="button" data-scroll="body">⬆ رجوع للأعلى</button>
+          <a class="miniBtn" href="./booking.html">الحجز</a>
+          <a class="miniBtn" href="./store.html">المتجر</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <p class="footer__text">© بيت التحفيات — بغداد</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="tour.js"></script>
+</body>
+</html>
