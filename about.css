@@ -1,0 +1,1573 @@
+/* ==========
+   About — Minimal Editorial + Dark Story Stages (FIXED SIZES)
+   - تصغير الستيج + الكارد + الصور
+   - ترتيب قوي للموبايل
+   - Timeline Slider مرتب وبدون تلخبط
+========== */
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
+
+/* =========================
+   TOKENS
+========================= */
+:root{
+  --max: 1180px;
+
+  --bg:#fff9ee;
+  --ink:#111111;
+  --muted:#6a6a6a;
+  --line:rgba(17,17,17,.10);
+
+  --dark:#0f1010;
+  --dark2:#141616;
+  --cream:#efe9df;
+  --creamMuted:rgba(239,233,223,.72);
+
+  --radius:18px;
+  --shadow: 0 18px 60px rgba(0,0,0,.28);
+  --shadow2: 0 14px 34px rgba(0,0,0,.32);
+
+  --gap: 26px;
+}
+
+/* =========================
+   BASE
+========================= */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--ink);
+  background: var(--bg);
+}
+img{max-width:100%; display:block}
+a{color:inherit; text-decoration:none}
+button{font-family:inherit}
+.wrap{
+  width:min(var(--max), calc(100% - 32px));
+  margin-inline:auto;
+}
+.srOnly{
+  position:absolute;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);
+  white-space:nowrap;border:0;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background: rgba(245,242,236,.78);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.brand__dot{
+  width:12px;height:12px;border-radius:999px;
+  background:#151515;opacity:.9;
+}
+.brand__name{
+  font-family:"Inter","Cairo",sans-serif;
+  font-weight:600;
+  letter-spacing:.2px;
+  font-size:14px;
+  opacity:.9;
+}
+.topbar__nav{display:flex;align-items:center;gap:18px}
+.navlink{
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:13px;
+  opacity:.72;
+  padding:8px 10px;
+  border-radius:999px;
+}
+.navlink:hover{opacity:1;background:rgba(0,0,0,.04)}
+.navlink.is-active{opacity:1;background:rgba(0,0,0,.06)}
+.lang{display:flex;gap:8px}
+.lang__btn{
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--ink);
+  font-size:12px;
+  padding:8px 10px;
+  border-radius:999px;
+  cursor:pointer;
+  opacity:.85;
+}
+.lang__btn:hover{opacity:1}
+.lang__btn.is-active{
+  background:#151515;color:var(--bg);
+  border-color:#151515;opacity:1;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section{padding: clamp(26px, 4vw, 52px) 0;}
+.grid{display:grid;gap:var(--gap)}
+
+/* =========================
+   LIGHT GRID
+========================= */
+.grid--light{
+  grid-template-columns: 1.05fr .95fr;
+  grid-template-areas:
+    "lead hero"
+    "content content"
+    "wide wide";
+  align-items:start;
+}
+.lead{grid-area:lead}
+.heroFigure{grid-area:hero}
+.contentBlock{grid-area:content}
+.wideArt{grid-area:wide}
+
+.kicker{
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0 0 10px;
+}
+.title{
+  margin:0 0 18px;
+  font-size: clamp(30px, 3.2vw, 50px);
+  line-height:1.05;
+  letter-spacing:-.02em;
+}
+.metaRow{display:flex;flex-wrap:wrap;gap:14px;padding-top:6px}
+.meta{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 14px;
+  display:flex;
+  gap:8px;
+  align-items:baseline;
+}
+.meta__label{
+  font-size:11px;color:var(--muted);
+  font-family:"Inter","Cairo",sans-serif;
+}
+.meta__value{
+  font-size:12px;
+  font-family:"Inter","Cairo",sans-serif;
+  opacity:.92;
+}
+.heroFigure{
+  border-radius: var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.heroFigure__img{
+  width:100%;
+  aspect-ratio: 4 / 3;
+  object-fit:cover;
+}
+.contentBlock{padding-top:6px;display:grid;gap:18px}
+.body{
+  margin:0;
+  font-size:15px;
+  line-height:1.85;
+  color: rgba(17,17,17,.88);
+  max-width: 72ch;
+}
+.infoTable{
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: rgba(255,255,255,.55);
+}
+.infoRow{
+  display:grid;
+  grid-template-columns: 220px 1fr;
+  gap:16px;
+  padding:14px 16px;
+  border-bottom:1px solid var(--line);
+}
+.infoRow:last-child{border-bottom:0}
+.infoKey{
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:12px;
+  color:var(--muted);
+}
+.infoVal{
+  font-size:13px;
+  line-height:1.7;
+  color: rgba(17,17,17,.9);
+}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:9px 12px;
+  font-size:12px;
+  background: rgba(0,0,0,.02);
+  opacity:.9;
+}
+.wideArt{
+  border-radius: 22px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.wideArt__img{
+  width:100%;
+  aspect-ratio: 16 / 6;
+  object-fit:cover;
+}
+
+/* =========================
+   DARK SECTION
+========================= */
+.section--dark{
+  background: linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
+  color: var(--cream);
+}
+.grid--dark{gap:18px}
+
+/* =========================
+   STORY STAGE (SIZES FIXED)
+   - كان ضخم عندك. هسه مضبوط.
+========================= */
+.storyStage{
+  position:relative;
+  border-radius: 24px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.10);
+
+  /* ✅ تصغير الارتفاع */
+  min-height: 520px;
+  max-height: 620px;
+
+  background-image:
+    radial-gradient(60% 90% at 70% 20%, rgba(255,255,255,.10) 0%, rgba(0,0,0,0) 55%),
+    var(--bg);
+  background-position:center, center;
+  background-size:cover, cover;
+  background-repeat:no-repeat, no-repeat;
+}
+
+/* طبقة تغميق خفيفة حتى النص يقرأ */
+.storyStage::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.45) 0%,
+    rgba(0,0,0,.18) 45%,
+    rgba(0,0,0,.05) 100%
+  );
+  pointer-events:none;
+}
+
+/* =========================
+   OVERLAY CARD (SMALLER + CLEAN)
+========================= */
+.overlayCard{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  z-index:2;
+
+  /* RTL default = على اليمين */
+  inset-inline-end: 22px;
+  inset-inline-start: auto;
+
+  /* ✅ تصغير الكارد */
+  width: min(560px, calc(100% - 44px));
+  display:grid;
+  grid-template-columns: 190px 1fr;
+
+  background: rgba(245,242,236,.94);
+  color:#111;
+  border-radius: 20px;
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(8px);
+}
+html[dir="ltr"] .overlayCard{
+  inset-inline-start: 22px;
+  inset-inline-end:auto;
+}
+
+.overlayCard__media{
+  background:#fff;
+  border-inline-end:1px solid rgba(0,0,0,.08);
+}
+.overlayCard__media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  /* ✅ لا تخليها طويلة زيادة */
+  aspect-ratio: 3 / 4;
+}
+
+.overlayCard__text{
+  padding: 16px 16px 14px;
+  display:grid;
+  gap:8px;
+  align-content:start;
+}
+.overlayCard__kicker{
+  margin:0;
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color: rgba(17,17,17,.62);
+}
+.overlayCard__title{
+  margin:0;
+  font-size:20px;
+  line-height:1.2;
+  letter-spacing:-.01em;
+}
+.overlayCard__sub{
+  margin:-4px 0 0;
+  font-family:"Inter","Cairo",sans-serif;
+  font-size:12px;
+  color: rgba(17,17,17,.68);
+}
+.overlayCard__body{
+  margin:6px 0 0;
+  font-size:13px;
+  line-height:1.85;
+  color: rgba(17,17,17,.86);
+  max-width: 56ch;
+
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+  -webkit-line-clamp: 6;
+}
+.overlayCard.is-open .overlayCard__body{
+  display:block;
+  -webkit-line-clamp: unset;
+}
+
+.overlayCard__meta{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+}
+.mini{
+  border:1px solid rgba(0,0,0,.10);
+  border-radius: 14px;
+  padding:10px 10px;
+  background: rgba(255,255,255,.62);
+}
+.mini__k{
+  display:block;
+  font-size:11px;
+  color:rgba(17,17,17,.55);
+  font-family:"Inter","Cairo",sans-serif;
+}
+.mini__v{
+  display:block;
+  font-size:12px;
+  color:rgba(17,17,17,.90);
+}
+
+.readMore{
+  border:1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.72);
+  color: rgba(17,17,17,.92);
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:12px;
+  cursor:pointer;
+  margin-top:2px;
+}
+html[dir="rtl"] .readMore{justify-self:start}
+html[dir="ltr"] .readMore{justify-self:end}
+.readMore:hover{background: rgba(255,255,255,.90)}
+
+/* =========================
+   MINI SHOTS (SMALLER + NO OVERLAP)
+========================= */
+.miniShots{
+  position:absolute;
+  z-index:2;
+
+  /* ✅ خليها بالزاوية المقابلة للكارد */
+  inset-inline-start: 22px;
+  bottom: 18px;
+
+  display:flex;
+  gap:10px;
+}
+html[dir="ltr"] .miniShots{
+  inset-inline-end: 22px;
+  inset-inline-start:auto;
+}
+
+.miniShot{
+  width:64px;
+  height:96px;
+  border-radius: 14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow: var(--shadow2);
+  background: rgba(0,0,0,.22);
+}
+.miniShot img{width:100%;height:100%;object-fit:cover;opacity:.95}
+
+
+/* =========================
+   DARK FOOTER ROW
+========================= */
+.darkFooter{
+  display:flex;
+  gap:18px;
+  align-items:flex-end;
+  justify-content:space-between;
+  padding: 2px 2px 0;
+}
+.darkTitle{margin:0 0 8px;font-size:18px;letter-spacing:-.01em}
+.darkBody{
+  margin:0;
+  max-width: 62ch;
+  font-size:14px;
+  line-height:1.8;
+  color: var(--creamMuted);
+}
+.ctaRow{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  background: var(--cream);
+  color:#111;
+  font-size:12px;
+  font-family:"Inter","Cairo",sans-serif;
+  border:1px solid rgba(255,255,255,.10);
+}
+.btn:hover{filter:brightness(.95)}
+.btn--ghost{
+  background: transparent;
+  color: var(--cream);
+  border:1px solid rgba(255,255,255,.22);
+}
+.btn--ghost:hover{background: rgba(255,255,255,.06)}
+.tinyMeta{
+  margin-top:10px;
+  font-size:11px;
+  color: rgba(239,233,223,.55);
+  text-align:end;
+}
+
+/* =========================
+   FOOTER (light)
+========================= */
+.footer{border-top:1px solid var(--line);padding:16px 0}
+.footer__inner{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  font-size:12px;
+  color:rgba(17,17,17,.70);
+}
+.footBrand{font-weight:700}
+.footLine{opacity:.85}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 980px){
+  .grid--light{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "lead"
+      "hero"
+      "content"
+      "wide";
+  }
+  .infoRow{grid-template-columns: 160px 1fr}
+
+  .darkFooter{flex-direction:column;align-items:flex-start}
+  .tinyMeta{text-align:start}
+}
+
+/* ✅ موبايل/تابلت: الستيج يصير “بوستر” والكارد تحت */
+@media (max-width: 760px){
+  .storyStage{
+    min-height: 420px;
+    max-height: none;
+    padding: 12px;
+  }
+
+  .overlayCard{
+    position:static;
+    transform:none;
+    width:100%;
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+  }
+
+  .overlayCard__media{
+    border-inline-end:0;
+    border-bottom:1px solid rgba(0,0,0,.08);
+  }
+  .overlayCard__media img{
+    aspect-ratio: 16 / 9; /* ✅ صورة أعرض على الموبايل */
+  }
+
+  .overlayCard__meta{grid-template-columns: 1fr}
+
+  .miniShots{
+    position:static;
+    margin-top:12px;
+    justify-content:flex-start;
+  }
+
+  .tSlide{
+    grid-template-columns: 1fr; /* ✅ السلايدر عمودي */
+    min-height: auto;
+  }
+  .tMedia{
+    border-inline-end:0;
+    border-bottom:1px solid rgba(255,255,255,.10);
+    min-height: 200px;
+  }
+  .tNav{display:none} /* على الموبايل خلي سوايب + دوتس */
+}
+
+@media (max-width: 640px){
+  .topbar__nav{display:none}
+  .brand__name{display:none}
+  .title{font-size: clamp(28px, 7vw, 38px)}
+}
+/* === CENTER overlayCard in storyStage === */
+.storyStage{ position: relative; } /* احتياط */
+
+.overlayCard{
+  inset-inline-start: 50% !important;
+  inset-inline-end: auto !important;
+  left: auto !important;
+  right: auto !important;
+
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important; /* مو translateY بس */
+}
+
+/* إذا تريد الـ miniShots هم تصير بالنص تحت */
+.miniShots{
+  inset-inline-start: 50% !important;
+  inset-inline-end: auto !important;
+  transform: translateX(-50%) !important;
+}
+/* =========================
+   FIX: Desktop wider card + Mobile layout clean
+   (paste at END of about.css)
+========================= */
+
+/* 1) Desktop / laptop: خلي الكارد أعرض شوي */
+@media (min-width: 721px){
+  .overlayCard{
+    width: min(860px, calc(100% - 72px)) !important; /* كان 720 */
+    grid-template-columns: 280px 1fr !important;     /* كان 240 */
+  }
+
+  .overlayCard__media img{
+    aspect-ratio: 4 / 5 !important; /* أقل طول من 3/4 */
+  }
+
+  /* optional: خلي الميني شوتس أصغر شوي حتى ما تزاحم */
+  .miniShot{
+    width: 66px !important;
+    height: 98px !important;
+  }
+}
+
+/* 2) Mobile: لا تخلي الكارد مطلّع/طاير */
+@media (max-width: 720px){
+  .storyStage{
+    min-height: auto !important;
+    padding: 14px !important; /* مساحة للكارد داخل الستيج */
+  }
+
+  /* الكارد يصير طبيعي داخل الستيج */
+  .overlayCard{
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  /* صورة الكارد تكون معقولة مو عملاقة */
+  .overlayCard__media img{
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+  }
+
+  /* النص لا يلتف ويلخبط */
+  .overlayCard__text{
+    padding: 14px !important;
+  }
+  .overlayCard__title{ font-size: 18px !important; }
+  .overlayCard__body{
+    -webkit-line-clamp: 5 !important;
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+  }
+
+  /* الميني شوتس تنزل تحت الكارد و تصغر */
+  .miniShots{
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    margin-top: 12px !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  .miniShot{
+    width: 56px !important;
+    height: 82px !important;
+    border-radius: 14px !important;
+  }
+}
+
+/* 3) Safety: امنع أي overflow يسبب قص/فراغ */
+.storyStage,
+.section--dark,
+.grid--dark{
+  overflow: hidden;
+}
+/* =========================
+   HARD FIX — About page
+   1) White page background
+   2) Center overlay card on desktop
+   3) Stop any black sections
+========================= */
+
+/* 1) اجبار الخلفية تصير بيضة */
+html, body{
+  background:#fff !important;
+  color:#111 !important;
+}
+
+/* إذا عندك أي سكشن غامق مسبب السواد */
+.section--dark{
+  background:#fff !important;
+  color:#111 !important;
+}
+
+/* إذا طبقة التغميق مسوية الجو كله غامق (اختياري) */
+.storyStage::before{
+  background: linear-gradient(90deg,
+    rgba(0,0,0,.18) 0%,
+    rgba(0,0,0,.10) 45%,
+    rgba(0,0,0,.00) 100%
+  ) !important;
+}
+
+/* 2) توسيط الكارد صح (لا تستخدم inset-inline-start بالـ RTL) */
+.storyStage{ position: relative; }
+
+.overlayCard{
+  left: 50% !important;
+  right: auto !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  /* تأكيد عرض مرتب */
+  width: min(860px, calc(100% - 72px)) !important;
+  grid-template-columns: 280px 1fr !important;
+}
+
+/* 3) الميني شوتس بالنص */
+.miniShots{
+  left: 50% !important;
+  right: auto !important;
+  inset-inline-start: auto !important;
+  inset-inline-end: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+/* 4) موبايل: الكارد يصير طبيعي تحت (بدون طيران) */
+@media (max-width: 720px){
+  .overlayCard{
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+  }
+  .miniShots{
+    position: static !important;
+    transform: none !important;
+    justify-content: center !important;
+    margin-top: 12px !important;
+  }
+}
+.is-hidden { display: none !important; }
+.map-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 18px;
+  border-radius:999px;
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,.08);
+  color:#111;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  transition:all .25s ease;
+}
+
+.map-btn:hover{
+  background:#111;
+  color:#fff;
+  transform:translateY(-1px);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+
+.map-btn__icon{
+  font-size:16px;
+  line-height:1;
+}
+/* =========================
+   ABOUT COVER – PINTEREST
+========================= */
+
+.aboutCover{
+  margin: 10px 0 28px;
+}
+
+.aboutCover__actions{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.coverBtn{
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:13px;
+  font-family:"Inter","Cairo",sans-serif;
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--ink);
+  transition:.25s ease;
+}
+
+.coverBtn.ghost:hover{
+  background:rgba(0,0,0,.04);
+}
+
+.coverBtn.solid{
+  background:#bfa77a;
+  border-color:#bfa77a;
+  color:#1f1e1c;
+}
+.coverBtn.solid:hover{
+  background:#d3bd90;
+}
+
+/* إطار الصورة */
+.aboutCover__frame{
+  position:relative;
+  max-width:980px;
+  margin-inline:auto;
+  padding:38px 38px 64px;
+  background:#1f1e1c;
+  border-radius:20px;
+  box-shadow:0 40px 80px rgba(0,0,0,.35);
+}
+
+/* الصورة */
+.aboutCover__img{
+  width:100%;
+  display:block;
+  filter:contrast(1.05) saturate(.92);
+}
+
+/* الشريط اللاصق */
+.tape{
+  position:absolute;
+  width:140px;
+  height:26px;
+  background:#cfc7b5;
+  opacity:.85;
+  pointer-events:none;
+}
+
+.tape--top{
+  top:-12px;
+  inset-inline-start:60px;
+  transform:rotate(-6deg);
+}
+
+.tape--bottom{
+  bottom:18px;
+  inset-inline-end:80px;
+  transform:rotate(8deg);
+}
+
+/* النص المرجعي */
+.aboutCover__caption{
+  margin:24px 0 0;
+  max-width:640px;
+  font-size:14px;
+  line-height:1.8;
+  color:#c9c3b8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:768px){
+
+  .aboutCover__actions{
+    justify-content:center;
+  }
+
+  .aboutCover__frame{
+    padding:22px 20px 46px;
+  }
+
+  .tape{
+    width:100px;
+    height:22px;
+  }
+
+  .tape--top{
+    inset-inline-start:30px;
+  }
+
+  .tape--bottom{
+    inset-inline-end:40px;
+  }
+
+  .aboutCover__caption{
+    font-size:13px;
+  }
+}
+/* =========================
+   ABOUT POSTER CARD
+========================= */
+
+.aboutPoster{
+  padding: 24px 0 40px;
+}
+
+/* الكارد نفسه */
+.aboutPoster__card{
+  position: relative;
+  width: 100%;
+  max-width: 1100px;          /* يطلع فخم على الحاسبة */
+  margin-inline: auto;
+  padding: 36px 36px 64px;
+
+  background: #1e1e1e;        /* رصاصي غامق */
+  border-radius: 26px;
+  box-shadow: 0 40px 90px rgba(0,0,0,.45);
+}
+
+/* الصورة */
+.aboutPoster__img{
+  display: block;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+
+  border-radius: 14px;
+  filter: contrast(1.05) saturate(.95);
+}
+
+/* النص داخل الكارد */
+.aboutPoster__caption{
+  margin: 22px auto 0;
+  max-width: 760px;
+
+  font-size: 15px;
+  line-height: 1.9;
+  color: #d8d4cc;
+  text-align: center;
+}
+
+/* اللاصق */
+.posterTape{
+  position: absolute;
+  width: 140px;
+  height: 26px;
+  background: #cfc7b5;
+  opacity: .85;
+  z-index: 3;
+}
+
+.posterTape--top{
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+}
+
+.posterTape--bottom{
+  bottom: 22px;
+  left: 80px;
+  transform: rotate(7deg);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px){
+
+  .aboutPoster__card{
+    padding: 22px 16px 46px;
+    border-radius: 20px;
+  }
+
+  .aboutPoster__caption{
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .posterTape{
+    width: 100px;
+    height: 22px;
+  }
+
+  .posterTape--bottom{
+    left: 24px;
+  }
+}
+/* =========================
+   HERO COVER (EDGE-TO-EDGE / FB COVER SIZE)
+   paste at END of about.css
+========================= */
+.aboutHero{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+}
+
+/* ارتفاع قريب من Facebook cover */
+.aboutHero__img{
+  width: 100%;
+  height: clamp(220px, 28vw, 340px);
+  object-fit: cover;
+  display: block;
+  filter: saturate(.95) contrast(1.05);
+}
+
+/* طبقة خفيفة فقط حتى النص يبان */
+.aboutHero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.00) 0%,
+    rgba(0,0,0,.28) 55%,
+    rgba(0,0,0,.55) 100%
+  );
+  pointer-events:none;
+}
+
+.aboutHero__overlay{
+  position:absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  bottom: 16px;
+  padding: 0 16px;
+  z-index: 2;
+}
+
+.aboutHero__title{
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: clamp(22px, 3vw, 34px);
+  letter-spacing: -.01em;
+  text-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+.aboutHero__cta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.heroBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:13px;
+  border:1px solid rgba(255,255,255,.22);
+  color:#fff;
+  background: rgba(0,0,0,.22);
+  text-decoration:none;
+}
+.heroBtn:hover{background: rgba(255,255,255,.08)}
+
+/* =========================
+   Card CTAs (inside overlayCard)
+========================= */
+.cardCtas{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: 10px;
+}
+
+.cardBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 12px;
+  border-radius:999px;
+  font-size:12px;
+  text-decoration:none;
+  border:1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.82);
+  color:#111;
+}
+.cardBtn:hover{background:#fff}
+
+.cardBtn--primary{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+.cardBtn--primary:hover{filter:brightness(.95)}
+
+.cardBtn--ghost{
+  background: transparent;
+  color:#111;
+  border-color: rgba(0,0,0,.16);
+}
+.cardBtn--ghost:hover{background: rgba(0,0,0,.04)}
+
+/* =========================
+   THE HOUSE TODAY — Elegant Closing
+========================= */
+
+.houseToday{
+  margin-top: 60px;
+}
+
+.houseToday__grid{
+  display:grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.houseToday__text{
+  max-width: 520px;
+}
+
+.houseToday__lead{
+  font-size: 15px;
+  line-height: 2;
+  color: #333;
+  margin: 16px 0 24px;
+}
+
+.houseToday__cta{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ===== Gallery ===== */
+.houseToday__gallery{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 160px;
+  gap: 12px;
+}
+
+.htImg{
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #000;
+}
+
+.htImg img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+  transition: transform .6s ease;
+  filter: contrast(1.05) saturate(.95);
+}
+
+.htImg:hover img{
+  transform: scale(1.06);
+}
+
+/* variations */
+.htImg--tall{
+  grid-row: span 2;
+}
+
+.htImg--wide{
+  grid-column: span 2;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .houseToday__grid{
+    grid-template-columns: 1fr;
+  }
+
+  .houseToday__gallery{
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 140px;
+  }
+}
+/* =========================
+   House Today Gallery Slider + Lightbox
+========================= */
+
+.houseToday__gallery{
+  min-width: 0; /* مهم حتى السلايدر ما يتكسر داخل grid */
+}
+
+.htSlider{
+  position: relative;
+  border-radius: 18px;
+  padding: 14px 44px 12px;
+  background: rgb(71, 0, 0);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.htViewport{
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.htTrack{
+  display: flex;
+  gap: 12px;
+  transition: transform .35s ease;
+  will-change: transform;
+}
+
+/* الصورة Portrait وبحجم مناسب */
+.htSlide{
+  flex: 0 0 auto;
+  width: clamp(120px, 12vw, 160px);
+  aspect-ratio: 3 / 4;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+}
+
+.htSlide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.01);
+  transition: transform .35s ease;
+}
+
+.htSlide:hover img{
+  transform: scale(1.06);
+}
+
+/* الأسهم */
+.htNav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.88);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.htPrev{ inset-inline-start: 10px; }
+.htNext{ inset-inline-end: 10px; }
+
+.htNav:hover{ background:#fff; }
+
+/* dots */
+.htDots{
+  display:flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.htDot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.18);
+  background: rgba(0,0,0,.06);
+  cursor: pointer;
+}
+
+.htDot.is-active{
+  width: 22px;
+  background: rgba(0,0,0,.75);
+  border-color: rgba(0,0,0,.75);
+}
+
+/* Lightbox */
+.htLightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0,0,0,.82);
+}
+
+.htLightbox[hidden]{ display:none; }
+
+.htLbImg{
+  max-width: min(980px, 92vw);
+  max-height: 86vh;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 30px 120px rgba(0,0,0,.60);
+  background: #000;
+  object-fit: contain;
+}
+
+.htLbClose{
+  position: fixed;
+  top: 16px;
+  inset-inline-end: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* موبايل */
+@media (max-width: 900px){
+  .htSlider{ padding: 12px 40px 10px; }
+  .htSlide{ width: clamp(110px, 34vw, 150px); }
+}
+/* ===== House Today: make it single column (text then slider) ===== */
+.houseToday__grid{
+  display: grid;
+  grid-template-columns: 1fr !important;
+  gap: 18px !important;
+  align-items: start !important;
+}
+
+.houseToday__text{
+  max-width: 760px;
+}
+
+/* ألوان أوضح */
+.houseToday .kicker{
+  color: rgb(0, 0, 0) !important;
+}
+.houseToday .title{
+  color: rgba(0,0,0,.92) !important;
+}
+.houseToday__lead{
+  color: rgba(0,0,0,.78) !important;
+}
+
+/* السلايدر ياخذ عرض مناسب تحت النص */
+.houseToday__gallery{
+  width: 100%;
+  max-width: 980px;
+}
+
+/* خليه واضح انه قابل للنقر */
+.htSlide{ cursor: zoom-in; }
+
+/* Space after House Today */
+.houseToday{
+  padding-bottom: 120px;
+}
+
+.houseToday__gallery{
+  margin-bottom: 40px;
+}
+/* Hide mini images inside story cards */
+.miniShots{
+  display: none !important;
+}
+/* FIX: readMore button not clickable بسبب miniShots overlay */
+.overlayCard{ z-index: 5 !important; }
+
+.miniShots{
+  z-index: 1 !important;
+  pointer-events: none !important; /* أهم سطر */
+}
+/* =========================
+   FIX: ReadMore open state layout (no giant card)
+   Paste at END of about.css
+========================= */
+
+/* 1) خَلّي الكارد ما يتضخم للأبد */
+.storyStage{ overflow:hidden; } /* عندك مشابه بس نخليه مؤكد */
+
+/* Desktop */
+@media (min-width: 721px){
+  .overlayCard{
+    max-height: min(74vh, 640px);   /* يثبت الطول */
+  }
+
+  /* خَلّي عمود النص يقدر يسكرول */
+  .overlayCard__text{
+    overflow: hidden;              /* بالوضع العادي */
+  }
+
+  /* لما ينفتح: السكروول يصير داخل النص */
+  .overlayCard.is-open .overlayCard__text{
+    overflow: auto;
+    padding-inline-end: 10px;      /* مساحة للسكرول */
+  }
+
+  /* لما ينفتح: خلّي الـbody يسكرول بدل ما يكبر الصفحة */
+  .overlayCard.is-open .overlayCard__body{
+    max-height: 38vh;              /* أهم سطر */
+    overflow: auto;
+    padding-inline-end: 8px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 720px){
+  .overlayCard{
+    max-height: 82vh;
+  }
+
+  .overlayCard.is-open .overlayCard__text{
+    overflow: auto;
+    padding-inline-end: 10px;
+  }
+
+  .overlayCard.is-open .overlayCard__body{
+    max-height: 42vh;
+    overflow: auto;
+    padding-inline-end: 8px;
+  }
+}
+
+/* 2) شكل السكرول يكون نظيف */
+.overlayCard__body::-webkit-scrollbar{ width: 8px; }
+.overlayCard__body::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,.18);
+  border-radius: 999px;
+}
+.overlayCard__body::-webkit-scrollbar-track{ background: transparent; }
+/* =========================================
+   ABOUT — FOOTER (CLEAN + FIX SVG SIZE)
+   paste at END of about.css
+========================================= */
+
+/* 0) Footer cover image (FB cover style) */
+.footerCover{
+  width: 100%;
+  margin-top: 40px;
+  background: #0f1010;
+}
+.footerCover img{
+  width: 100%;
+  height: clamp(220px, 28vw, 320px); /* قريب من Facebook cover */
+  object-fit: cover;
+  display: block;
+}
+
+/* 1) Footer shell */
+.siteFooter{
+  background: #0f1010;
+  color: rgba(239,233,223,.92);
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+.siteFooter .fWrap{
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+  padding: 26px 0 18px;
+}
+
+/* 2) CTA card */
+.siteFooter .fTop{margin-bottom: 18px;}
+.siteFooter .fCta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding: 18px 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.10);
+}
+.siteFooter .fCta__title{
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.siteFooter .fCta__sub{
+  font-size: 13px;
+  opacity: .78;
+}
+.siteFooter .fCta__actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* 3) Main footer grid */
+.siteFooter .fMid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr .8fr .9fr; /* آخر عمود للايقونات */
+  gap: 18px;
+  padding-top: 16px;
+}
+.siteFooter .fCol{min-width:0;}
+.siteFooter .fTitle{
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  opacity: .95;
+}
+.siteFooter .fLinks{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+.siteFooter .fLinks a{
+  font-size: 13px;
+  opacity: .78;
+}
+.siteFooter .fLinks a:hover{opacity: 1; text-decoration: underline;}
+
+/* brand */
+.siteFooter .fLogoRow{display:flex; align-items:center; gap:10px; margin-bottom: 10px;}
+.siteFooter .fLogo{
+  width: 44px; height: 44px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.siteFooter .fBrandName{font-weight:800; font-size:14px;}
+.siteFooter .fBrandSub{opacity:.75; font-size:12px;}
+.siteFooter .fNote{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.85;
+  opacity: .78;
+  max-width: 52ch;
+}
+.siteFooter .fTiny{
+  margin-top: 12px;
+  font-size: 12px;
+  opacity: .70;
+}
+
+/* 4) Social icons — THIS FIXES THE HUGE ICONS */
+.siteFooter .fIcons{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items:center;
+}
+.siteFooter .ico{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.siteFooter .ico:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+}
+/* أهم سطرين: يقتلون الـ default 300x150 للـ SVG */
+.siteFooter .ico svg{
+  width: 18px;
+  height: 18px;
+  display:block;
+  fill: rgba(239,233,223,.92);
+}
+
+/* 5) Bottom */
+.siteFooter .fBottom{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+.siteFooter .fCopy{
+  font-size: 12px;
+  opacity: .68;
+  text-align: center;
+}
+
+/* 6) Responsive */
+@media (max-width: 980px){
+  .siteFooter .fMid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px){
+  .siteFooter .fCta{flex-direction:column; align-items:flex-start;}
+  .siteFooter .fMid{grid-template-columns: 1fr;}
+  .siteFooter .fCopy{text-align:start;}
+}

@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بيت التحفيات | House of Antiques</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__inner topbar__inner--v2">
+
+      <!-- Brand / Logo -->
+      <a class="brandV2" href="#home" aria-label="بيت التحفيات">
+        <img class="brandV2__logo" src="logo.png" alt="House of Antiques Logo">
+        <span class="brandV2__stack">
+          <span class="brandV2__ar" data-i18n="brandAr">بيت التحفيات</span>
+          <span class="brandV2__en" data-i18n="brandEn">House of Antiques</span>
+        </span>
+      </a>
+
+      <!-- Center nav -->
+      <nav class="navV2" aria-label="Primary">
+        <button class="navV2__burger" type="button" aria-label="Menu" aria-expanded="false">☰</button>
+
+        <div class="navV2__links" id="navLinks">
+          <a href="about.html" data-i18n="navAbout">نبذة</a>
+          <a href="#entrances" data-i18n="navExplore">استكشف</a>
+          <a href="#stats" data-i18n="navStats">الأرقام</a>
+          <a href="#timeline" data-i18n="navTimeline">الخط الزمني</a>
+          <a href="tour.html" data-i18n="navTour">جولة افتراضية</a>
+          <a href="contact.html" data-i18n="navContact">تواصل معنا</a>
+        </div>
+      </nav>
+
+     <div class="langV2" aria-label="Language">
+  <button class="langBtn is-active" data-lang="ar" type="button">AR</button>
+  <button class="langBtn" data-lang="en" type="button">EN</button>
+</div>
+
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <img class="hero__bgImg is-active" src="assetshero-1.jpg" alt="">
+        <img class="hero__bgImg" src="assetshero-2.jpg" alt="">
+        <img class="hero__bgImg" src="assetshero-3.jpg" alt="">
+        <img class="hero__bgImg" src="assetshero-4.jpg" alt="">
+      </div>
+
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="wrap hero__content hero__content--loquet">
+        <div class="heroBox">
+          <div class="heroTopline" data-i18n="heroTopline">STATUE</div>
+
+          <h1 class="heroTitle">
+          <span data-i18n="brand.name">بيت التحفيات</span>
+            <span class="heroTitleSub" data-i18n="heroTitleBig2">ذاكرة بغداد</span>
+          </h1>
+
+          <p class="heroLead" data-i18n="heroLead">
+            بيت بغدادي يجمع التحف النادرة والسجاد والنحاس والخشب والكريستال والأعمال الفنية… بتجربة متحفية فاخرة.
+          </p>
+
+          <div class="heroActions">
+            <a class="heroBtn heroBtn--primary" href="#entrances" data-i18n="ctaExplore">استكشف الأقسام</a>
+            <a class="heroBtn heroBtn--ghost" href="#about" data-i18n="ctaMore">اقرأ أكثر</a>
+          </div>
+
+          <div class="heroInfoRow">
+            <div class="heroInfo">
+              <span class="heroInfoDot"></span>
+              <div class="heroInfoText">
+                <div class="heroInfoK" data-i18n="heroInfo1K">ساعات الزيارة</div>
+                <div class="heroInfoV" data-i18n="heroInfo1V">حسب الحجز</div>
+              </div>
+            </div>
+
+            <div class="heroInfo">
+              <span class="heroInfoDot"></span>
+              <div class="heroInfoText">
+                <div class="heroInfoK" data-i18n="heroInfo2K">الموقع</div>
+                <div class="heroInfoV" data-i18n="heroInfo2V">بغداد</div>
+              </div>
+            </div>
+
+            <div class="heroInfo">
+              <span class="heroInfoDot"></span>
+              <div class="heroInfoText">
+                <div class="heroInfoK" data-i18n="heroInfo3K">جولة 360</div>
+                <div class="heroInfoV" data-i18n="heroInfo3V">داخل الموقع</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- نفس كنترول السلايدر مالتچ، بس نخليه مرتب تحت -->
+          <div class="hero__controls heroControls--loquet">
+            <button class="icon" type="button" id="prevHero" aria-label="Prev">‹</button>
+            <div class="dots" id="heroDots" aria-label="Hero dots"></div>
+            <button class="icon" type="button" id="nextHero" aria-label="Next">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTRANCES (edge-to-edge images, no card frame) -->
+    <section class="section" id="entrances">
+
+      <!-- العنوان داخل wrap (يبقى مرتب) -->
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2" data-i18n="entrancesTitle">بوابات بيت التحفيات</h2>
+          <p class="p" data-i18n="entrancesDesc">اختر طريقك إلى الذاكرة… ولكل باب حكاية.</p>
+        </div>
+      </div>
+
+      <!-- ✅ القائمة Full-bleed (تلزك بالحافة) -->
+      <div class="bleed">
+        <div class="exhList refList">
+
+          <!-- 1) ABOUT -->
+          <article class="exhItem">
+            <div class="exhMedia">
+              <img src="assetscard-aboutus.jpg" alt="About">
+            </div>
+
+            <div class="exhBody">
+              <div class="exhKicker" data-i18n="ex1K">نبذة</div>
+              <h3 class="exhH" data-i18n="ex1T">نبذة عن بيت التحفيات</h3>
+              <p class="exhP" data-i18n="ex1P">
+                قصة بيت بغدادي جمع التحف النادرة… من ذاكرة العائلة إلى وجهة ثقافية اليوم.
+              </p>
+
+              <div class="exhMeta">
+                <span class="m" data-i18n="ex1M1">قصة • إرث</span>
+                <span class="m" data-i18n="ex1M2">قراءة 3 دقائق</span>
+              </div>
+
+              <a class="exhBtn" href="about.html" data-i18n="moreAbout">المزيد</a>
+            </div>
+          </article>
+
+          <!-- 2) STORE (reverse) -->
+          <article class="exhItem isReverse">
+            <div class="exhMedia">
+              <img src="assetscard-store.jpg" alt="Store">
+            </div>
+
+            <div class="exhBody">
+              <div class="exhKicker" data-i18n="ex2K">المتجر</div>
+              <h3 class="exhH" data-i18n="ex2T">تسوّق التحف</h3>
+              <p class="exhP" data-i18n="ex2P">
+                قطع نادرة مختارة بعناية… اكتشف السجاد والنحاس والخشب والكريستال وغيرها.
+              </p>
+
+              <div class="exhMeta">
+                <span class="m" data-i18n="ex2M1">قطع نادرة</span>
+                <span class="m" data-i18n="ex2M2">تحديثات مستمرة</span>
+              </div>
+
+              <a class="exhBtn" href="https://houseofantiques.github.io/mtjer01/" target="_blank" rel="noopener" data-i18n="goStore">ادخل المتجر</a>
+            </div>
+          </article>
+
+          <!-- 3) BOOKING -->
+          <article class="exhItem">
+            <div class="exhMedia">
+              <img src="assetscard-booking.jpg" alt="Booking">
+            </div>
+
+            <div class="exhBody">
+              <div class="exhKicker" data-i18n="ex3K">الحجز</div>
+              <h3 class="exhH" data-i18n="ex3T">احجزي زيارتك</h3>
+              <p class="exhP" data-i18n="ex3P">
+                زيارة متحفية • تصوير • فعالية خاصة… احجزي بسهولة واختر وقتك.
+              </p>
+
+              <div class="exhMeta">
+                <span class="m" data-i18n="ex3M1">زيارة • تصوير</span>
+                <span class="m" data-i18n="ex3M2">حجز سريع</span>
+              </div>
+
+              <a class="exhBtn" href="https://houseofantiques.github.io/Booking-" data-i18n="goBooking">اذهب للحجز</a>
+            </div>
+          </article>
+
+          <!-- 4) PRESS (reverse) -->
+          <article class="exhItem isReverse">
+            <div class="exhMedia">
+              <img src="assetscard-press.jpg" alt="Press">
+            </div>
+
+            <div class="exhBody">
+              <div class="exhKicker" data-i18n="ex4K">صحافة</div>
+              <h3 class="exhH" data-i18n="ex4T">تغطيات وأخبار</h3>
+              <p class="exhP" data-i18n="ex4P">
+                مقالات • فيديو • أرشيف… تابع كل ما كُتب وقيل عن بيت التحفيات.
+              </p>
+
+              <div class="exhMeta">
+                <span class="m" data-i18n="ex4M1">مقالات</span>
+                <span class="m" data-i18n="ex4M2">فيديو</span>
+              </div>
+
+              <a class="exhBtn" href="press.html" data-i18n="goPress">ادخل</a>
+            </div>
+          </article>
+
+          <!-- 5) AUCTION -->
+          <article class="exhItem">
+            <div class="exhMedia">
+              <img src="assetscard-auction.jpg" alt="Auction">
+            </div>
+
+            <div class="exhBody">
+              <div class="exhKicker" data-i18n="ex5K">المزاد</div>
+              <h3 class="exhH" data-i18n="ex5T">المزاد القادم</h3>
+              <p class="exhP" data-i18n="ex5P">
+                قطع مختارة بعناية تُعرض قبل المزاد… تفاصيل الحضور والحجز قريباً.
+              </p>
+
+              <div class="exhMeta">
+                <span class="m" data-i18n="ex5M1">عرض مسبق</span>
+                <span class="m" data-i18n="ex5M2">حجز • تفاصيل</span>
+              </div>
+
+              <a class="exhBtn" href="auction.html" data-i18n="goAuction">تفاصيل المزاد</a>
+            </div>
+          </article>
+
+          <!-- 6) TOUR (reverse) -->
+          <article class="exhItem isReverse">
+            <div class="exhMedia">
+              <img src="assetscard-tour.jpg" alt="Tour">
+            </div>
+
+            <div class="exhBody">
+              <div class="exhKicker" data-i18n="ex6K">جولة 360</div>
+              <h3 class="exhH" data-i18n="ex6T">جولة افتراضية داخل البيت</h3>
+              <p class="exhP" data-i18n="ex6P">
+                استكشف المكان قبل الزيارة… جولة تفاعلية داخل بيت التحفيات.
+              </p>
+
+              <div class="exhMeta">
+                <span class="m" data-i18n="ex6M1">Matterport</span>
+                <span class="m" data-i18n="ex6M2">داخل الصفحة</span>
+              </div>
+
+              <a class="exhBtn" href="tour.html" data-i18n="goTour">ابدأ الجولة</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT + STATS -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2" data-i18n="aboutTitle">بيت غنيّ بالتفاصيل</h2>
+          <p class="p" data-i18n="aboutDesc">من متجر أنتيك إلى وجهة متحفية وثقافية…</p>
+        </div>
+
+        <div class="stats" id="stats">
+          <div class="stat"><div class="num" data-count="106">0</div><div class="lbl" data-i18n="s1">عمر البيت (سنة)</div></div>
+          <div class="stat"><div class="num" data-count="14">0</div><div class="lbl" data-i18n="s2">عدد الغرف</div></div>
+          <div class="stat"><div class="num" data-count="12000">0</div><div class="lbl" data-i18n="s3">عدد التحف التقريبي</div></div>
+          <div class="stat"><div class="num" data-count="50000">0</div><div class="lbl" data-i18n="s4">عدد الزوار لتقريبي منذ الثمانينات</div></div>
+        </div>
+
+        <div class="cards3">
+          <div class="card">
+            <h3 data-i18n="c1t">قرن من العمارة البغدادية</h3>
+            <p data-i18n="c1p">بيت عمره أكثر من قرن
+شُيّد بيت التحفيات عام 1920، ويضم 14 غرفة تحيط بحوش بغدادي وحديقة داخلية، محافظًا على طراز العمارة البغدادية الأصيلة بتفاصيلها، ومساحاتها الواسعة، وتوزيعها التقليدي الذي يجعل من البيت نفسه قطعة تراثية حيّة.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="c2t">مقتنيات من حول العالم</h3>
+            <p data-i18n="c2p">أكثر من 12,000 قطعة أنتيك
+تضم مجموعات بيت التحفيات آلاف القطع النادرة من السجاد، والنحاس، والفضة، والخشب، والكريستال، والأعمال الفنية، جُمعت بعناية على مدى عقود من العراق، والشرق الأوسط، وأوروبا، وآسيا، باقتناء مباشر قائم على المعرفة والتوثيق لا على الصدفة.</p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="c3t">محطة للثقافة والزائرين</h3>
+            <p data-i18n="c3p">وجهة معروفة منذ الثمانينات
+استقبل بيت التحفيات منذ ثمانينات القرن الماضي عشرات الآلاف من الزوّار من دبلوماسيين، وسفراء، وباحثين، وسياح من مختلف دول العالم، ليكون محطة ثقافية معروفة لكل من يهتم بالتاريخ، والفن، والاقتناء الأصيل.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- FOOTER COVER IMAGE -->
+<section class="footerCover" aria-hidden="true">
+  <!-- حط صورتك هنا (قياس كفر فيسبوك) -->
+  <img src="footercover.jpg" alt="">
+</section>
+
+<!-- FOOTER -->
+<footer class="siteFooter" role="contentinfo">
+  <div class="fWrap">
+
+    <div class="fTop">
+      <div class="fCta">
+        <div class="fCta__text">
+          <div class="fCta__title" data-i18n="footer.cta.title">جاهز تستكشف بيت التحفيات؟</div>
+          <div class="fCta__sub" data-i18n="footer.cta.sub">احجز زيارتك أو شاهد الجولة الافتراضية</div>
+        </div>
+
+        <div class="fCta__actions">
+          <a class="btn btn--primary" href="booking.html" data-i18n="footer.cta.book">احجز الآن</a>
+          <a class="btn btn--ghost" href="tour.html" data-i18n="footer.cta.tour">الجولة الافتراضية</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fMid">
+      <!-- Brand -->
+      <div class="fCol fBrand">
+        <div class="fLogoRow">
+          <div class="fLogo" aria-hidden="true"></div>
+          <div class="fBrandText">
+            <div class="fBrandName" data-i18n="brandAr">بيت التحفيات</div>
+            <div class="fBrandSub" data-i18n="brandEn">House of Antiques</div>
+          </div>
+        </div>
+
+        <p class="fNote" data-i18n="footer.note">
+          منصة تعريفية ثقافية توثق قصة البيت والعائلة والتحف، وتعرض خدمات الزيارات والفعاليات.
+        </p>
+
+        <div class="fTiny">
+          <span data-i18n="footer.addr">بغداد — شارع أبو نؤاس</span>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div class="fCol">
+        <div class="fTitle" data-i18n="footer.quick">روابط سريعة</div>
+        <ul class="fLinks">
+          <li><a href="about.html" data-i18n="footer.about">نبذة</a></li>
+          <li><a href="press.html" data-i18n="footer.press">الصحافة</a></li>
+          <li><a href="store.html" data-i18n="footer.store">المتجر</a></li>
+          <li><a href="auction.html" data-i18n="footer.auction">المزاد</a></li>
+        </ul>
+      </div>
+
+      <!-- Policies -->
+      <div class="fCol">
+        <div class="fTitle" data-i18n="footer.legal">القانون والسياسات</div>
+        <ul class="fLinks">
+          <li><a href="terms.html" data-i18n="footer.terms">الأحكام</a></li>
+          <li><a href="privacy.html" data-i18n="footer.privacy">الخصوصية</a></li>
+        </ul>
+      </div>
+
+      <!-- Social / Contact icons -->
+      <div class="fCol">
+        <div class="fTitle" data-i18n="footer.contact">تواصل</div>
+
+        <div class="fIcons" aria-label="روابط التواصل">
+          <!-- Email -->
+          <a class="ico" href="mailto:houseofantiques@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp -->
+          <a class="ico" href="https://wa.me/9647777045599" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 11.9A8.5 8.5 0 1 1 11.9 3a8.5 8.5 0 0 1 8.6 8.9zm-4.1 2.4c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.1-.5.1-.1.2-.6.7-.7.8-.1.1-.3.1-.5 0-.3-.1-1-.4-1.9-1.3-.7-.6-1.1-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.1-.4 0-.1-.5-1.3-.7-1.8-.2-.5-.4-.4-.5-.4h-.4c-.1 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.1.9 2.3c.1.2 1.6 2.4 3.9 3.4.5.2.9.3 1.2.4.5.2 1 .2 1.4.1.4-.1 1.2-.5 1.3-.9.2-.4.2-.8.1-.9-.1-.1-.2-.2-.4-.3z"/>
+            </svg>
+          </a>
+
+          <!-- Call -->
+          <a class="ico" href="tel:+9647777045599" aria-label="Call">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.4 0 .8-.3 1.1l-2.2 2.2z"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a class="ico" href="https://web.facebook.com/profile.php?id=61576091652992" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.3V12h2.3V9.8c0-2.3 1.4-3.6 3.5-3.6 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.4.7-1.4 1.4V12h2.5l-.4 2.9h-2.1v7A10 10 0 0 0 22 12z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a class="ico" href="https://www.instagram.com/house_ofantiques/?__pwa=1" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.5a4.5 4.5 0 1 1-4.5 4.5A4.5 4.5 0 0 1 12 7.5zm0 2a2.5 2.5 0 1 0 2.5 2.5A2.5 2.5 0 0 0 12 9.5zm4.8-2.8a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a class="ico" href="https://www.youtube.com/@house.of.antiques" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.4.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S0 8.1 0 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8.3.3 8.3.3s4.9 0 8.2-.3c.4-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.5 14.8V7.8l6.2 3.5-6.2 3.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fBottom">
+      <div class="fCopy" data-i18n="footer.copy">© 2026 بيت التحفيات — جميع الحقوق محفوظة</div>
+    </div>
+
+  </div>
+</footer>
+
+
+
+  </main>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
