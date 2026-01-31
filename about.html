@@ -1,358 +1,0 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>نبذة | بيت التحفيات</title>
-
-  <link rel="stylesheet" href="about.css" />
-  <script defer src="i18n.js"></script>
-  <script defer src="about.js"></script>
-</head>
-
-<body>
-  <!-- Top minimal nav -->
-  <header class="topbar">
-    <div class="wrap topbar__inner">
-      <a class="brand" href="./index.html" aria-label="Home">
-        <span class="brand__dot"></span>
-        <span class="brand__name">House of Antiques</span>
-      </a>
-
-      <nav class="topbar__nav" aria-label="Primary">
-        <a class="navlink" href="./index.html" data-i18n="nav.home">الرئيسية</a>
-      </nav>
-
-      <div class="lang">
-        <button class="lang__btn is-active" type="button" data-lang="ar">AR</button>
-        <button class="lang__btn" type="button" data-lang="en">EN</button>
-        <button class="lang__btn" type="button" data-lang="ku">KU</button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- ===== HERO COVER (EDGE-TO-EDGE / FB-COVER HEIGHT) ===== -->
-    <section class="aboutHero" aria-label="About cover">
-      <img class="aboutHero__img" src="assetscard-aboutus.jpg" alt="بيت التحفيات — ذاكرة بغداد">
-      <div class="aboutHero__overlay">
-        <h1 class="aboutHero__title" data-i18n="about.title">بيت التحفيات — ذاكرة بغداد</h1>
-
-        <div class="aboutHero__cta">
-          <a
-            href="https://maps.app.goo.gl/dWs6bkrZMKsSVMd89"
-            target="_blank"
-            rel="noopener"
-            class="map-btn"
-            aria-label="عرض موقع بيت التحفيات على خرائط كوكل"
-          >
-            <span class="map-btn__icon">📍</span>
-            <span class="map-btn__text" data-i18n="about.mapCta">موقع البيت على الخريطة</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= SECTION 1 (LIGHT) ======= -->
-    <section class="section section--light">
-      <div class="wrap">
-        <div class="grid grid--light">
-
-          <div class="lead">
-            <p class="kicker" data-i18n="about.kicker">نبذة</p>
-            <!-- العنوان موجود بالهيرو، نخليه هنا كـ نص أقل فقط -->
-            <h2 class="title" data-i18n="about.subtitle">حكاية بيت… وحكاية عائلة</h2>
-
-            <div class="metaRow">
-              <div class="meta">
-                <span class="meta__label" data-i18n="about.meta1.label">المكان</span>
-                <span class="meta__value" data-i18n="about.meta1.value">بغداد — أبو نؤاس</span>
-              </div>
-              <div class="meta">
-                <span class="meta__label" data-i18n="about.meta2.label">التأسيس</span>
-                <span class="meta__value" data-i18n="about.meta2.value">1989</span>
-              </div>
-              <div class="meta">
-                <span class="meta__label" data-i18n="about.meta3.label">الطراز</span>
-                <span class="meta__value" data-i18n="about.meta3.value">بيت بغدادي (1920)</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="contentBlock">
-            <p class="body" data-i18n="about.body1">
-              بيت التحفيات ليس مجرد مكان لعرض القطع، بل ذاكرة حيّة لبغداد…
-            </p>
-
-            <div class="infoTable" role="table" aria-label="Info">
-              <div class="infoRow" role="row">
-                <div class="infoKey" role="cell" data-i18n="about.table.key1">المحتوى</div>
-                <div class="infoVal" role="cell" data-i18n="about.table.val1">تحف، سجاد، نحاس، فضة، كريستال، أعمال فنية</div>
-              </div>
-              <div class="infoRow" role="row">
-                <div class="infoKey" role="cell" data-i18n="about.table.key2">الهوية</div>
-                <div class="infoVal" role="cell" data-i18n="about.table.val2">متحف + متجر + قصة عائلة</div>
-              </div>
-              <div class="infoRow" role="row">
-                <div class="infoKey" role="cell" data-i18n="about.table.key3">الرؤية</div>
-                <div class="infoVal" role="cell" data-i18n="about.table.val3">إحياء التراث وإعادة تقديمه بمعايير معاصرة</div>
-              </div>
-            </div>
-
-            <div class="chips">
-              <span class="chip" data-i18n="about.chip1">قصة عائلة</span>
-              <span class="chip" data-i18n="about.chip2">متحف حي</span>
-              <span class="chip" data-i18n="about.chip3">تراث بغداد</span>
-            </div>
-          </div>
-
-          <figure class="wideArt">
-          </figure>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= SECTION 2 (DARK / STORY STAGES) ======= -->
-    <section class="section section--dark">
-      <div class="wrap">
-
-        <div class="grid grid--dark">
-
-          <!-- ===== STAGE 0: THE HOUSE ===== -->
-          <div class="storyStage" style="--bg:url('house.jpg');">
-            <article class="overlayCard" aria-label="House card">
-              <div class="overlayCard__media">
-                <img src="house.jpg" alt="بيت التحفيات">
-              </div>
-
-              <div class="overlayCard__text">
-                <p class="overlayCard__kicker" data-i18n="house.kicker">البيت</p>
-                <h2 class="overlayCard__title" data-i18n="house.title">بيت التحفيات</h2>
-                <p class="overlayCard__sub" data-i18n="house.sub">بيت بغدادي — 1920</p>
-
-                <p class="overlayCard__body" data-i18n="house.body">
-                  بيت التحفيات هو بيت بغدادي قديم يعود تاريخ بنائه إلى عام 1920...
-                </p>
-
-                <!-- ✅ نفس الزر، بس النص راح يصير "اكمل القصة" من about.js -->
-                <button class="readMore" type="button" data-i18n="ui.more">اكمل القصة</button>
-
-                <!-- ✅ CTA: فقط إضافات بدون تغيير تصميم الكارد -->
-                <div class="cardCtas" aria-label="Card actions">
-                  <a class="cardBtn cardBtn--primary" href="./tour.html" data-i18n="cta.tour">الجولة الافتراضية</a>
-                </div>
-
-                <div class="overlayCard__meta">
-                  <div class="mini">
-                    <span class="mini__k" data-i18n="house.m1k">الموقع</span>
-                    <span class="mini__v" data-i18n="house.m1v">شارع أبو نؤاس</span>
-                  </div>
-                  <div class="mini">
-                    <span class="mini__k" data-i18n="house.m2k">محطة</span>
-                    <span class="mini__v" data-i18n="house.m2v">1989 — افتتاح البيت</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div class="miniShots" aria-hidden="true">
-              <div class="miniShot"><img src="house.jpg" alt=""></div>
-              <div class="miniShot"><img src="assetscard-aboutus.jpg" alt=""></div>
-              <div class="miniShot"><img src="assetscard-prejss.jpg" alt=""></div>
-            </div>
-          </div>
-
-          <!-- ===== STAGE 1: GRANDFATHER ===== -->
-          <div class="storyStage" style="--bg:url('grand.jpg');">
-            <article class="overlayCard" aria-label="Grandfather card">
-              <div class="overlayCard__media">
-                <img src="grand.jpg" alt="محمد علي طاهر الألماني">
-              </div>
-
-              <div class="overlayCard__text">
-                <p class="overlayCard__kicker" data-i18n="grand.kicker">المؤسس</p>
-                <h2 class="overlayCard__title" data-i18n="grand.title">محمد علي طاهر الألماني</h2>
-                <p class="overlayCard__sub" data-i18n="grand.sub">1889 — 1988</p>
-
-                <p class="overlayCard__body" data-i18n="grand.body">
-                  محمد علي طاهر الألماني (1889–1988) يُعدّ أحد الأسماء البارزة...
-                </p>
-
-                <button class="readMore" type="button" data-i18n="ui.more">اكمل القصة</button>
-
-                <div class="cardCtas" aria-label="Card actions">
-                  <a class="cardBtn cardBtn--ghost" href="./press.html" data-i18n="cta.press">الصحافة</a>
-                </div>
-
-                <div class="overlayCard__meta">
-                  <div class="mini">
-                    <span class="mini__k" data-i18n="grand.m1k">محطة</span>
-                    <span class="mini__v" data-i18n="grand.m1v">محلات خان البغدادي</span>
-                  </div>
-                  <div class="mini">
-                    <span class="mini__k" data-i18n="grand.m2k">الأمنية</span>
-                    <span class="mini__v" data-i18n="grand.m2v">“لو كنت صاحب ثروة…”</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div class="miniShots" aria-hidden="true">
-              <div class="miniShot"><img src="grand.jpg" alt=""></div>
-              <div class="miniShot"><img src="house.jpg" alt=""></div>
-              <div class="miniShot"><img src="father.jpg" alt=""></div>
-            </div>
-          </div>
-
-          <!-- ===== STAGE 2: FATHER ===== -->
-          <div class="storyStage" style="--bg:url('father.jpg');">
-            <article class="overlayCard" aria-label="Father card">
-              <div class="overlayCard__media">
-                <img src="father.jpg" alt="طارق محمد علي الألماني">
-              </div>
-
-              <div class="overlayCard__text">
-                <p class="overlayCard__kicker" data-i18n="father.kicker">المؤسس الفعلي</p>
-                <h2 class="overlayCard__title" data-i18n="father.title">طارق محمد علي الألماني</h2>
-                <p class="overlayCard__sub" data-i18n="father.sub">1954 — 2014</p>
-
-                <p class="overlayCard__body" data-i18n="father.body">
-                  طارق محمد علي الألماني (1954–2014) هو المؤسس الفعلي لبيت التحفيات...
-                </p>
-
-                <button class="readMore" type="button" data-i18n="ui.more">اكمل القصة</button>
-
-                <div class="cardCtas" aria-label="Card actions">
-                  <a class="cardBtn cardBtn--ghost" href="./press.html" data-i18n="cta.press">الصحافة</a>
-                </div>
-
-                <div class="overlayCard__meta">
-                  <div class="mini">
-                    <span class="mini__k" data-i18n="father.m1k">محطة</span>
-                    <span class="mini__v" data-i18n="father.m1v">1989 — شراء البيت</span>
-                  </div>
-                  <div class="mini">
-                    <span class="mini__k" data-i18n="father.m2k">عصر</span>
-                    <span class="mini__v" data-i18n="father.m2v">1989–2004 — ازدهار البيت</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div class="miniShots" aria-hidden="true">
-              <div class="miniShot"><img src="father.jpg" alt=""></div>
-              <div class="miniShot"><img src="assetscard-prejss.jpg" alt=""></div>
-              <div class="miniShot"><img src="house.jpg" alt=""></div>
-            </div>
-          </div>
-
-          <!-- ===== STAGE 3: AZAD ===== -->
-          <div class="storyStage" style="--bg:url('azad.jpg');">
-            <article class="overlayCard" aria-label="Azad card">
-              <div class="overlayCard__media">
-                <img src="azad.jpg" alt="أزاد طارق محمد علي الألماني">
-              </div>
-
-              <div class="overlayCard__text">
-                <p class="overlayCard__kicker" data-i18n="azad.kicker">الجيل الثالث</p>
-                <h2 class="overlayCard__title" data-i18n="azad.title">أزاد طارق محمد علي الألماني</h2>
-                <p class="overlayCard__sub" data-i18n="azad.sub">إحياء البيت — 2022</p>
-
-                <p class="overlayCard__body" data-i18n="azad.body">
-                  أزاد طارق محمد علي الألماني يمثل الجيل الثالث من عائلة الألماني...
-                </p>
-
-                <button class="readMore" type="button" data-i18n="ui.more">اكمل القصة</button>
-
-                <div class="cardCtas" aria-label="Card actions">
-                  <a class="cardBtn cardBtn--ghost" href="./press.html" data-i18n="cta.press">الصحافة</a>
-                </div>
-
-                <div class="overlayCard__meta">
-                  <div class="mini">
-                    <span class="mini__k" data-i18n="azad.m1k">بداية</span>
-                    <span class="mini__v" data-i18n="azad.m1v">محل أنتيك بعمر 11</span>
-                  </div>
-                  <div class="mini">
-                    <span class="mini__k" data-i18n="azad.m2k">محطة</span>
-                    <span class="mini__v" data-i18n="azad.m2v">2022 — ترميم وإعادة فتح</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <div class="miniShots" aria-hidden="true">
-              <div class="miniShot"><img src="azad.jpg" alt=""></div>
-              <div class="miniShot"><img src="house.jpg" alt=""></div>
-              <div class="miniShot"><img src="father.jpg" alt=""></div>
-            </div>
-          </div>
-
-      </div>
-    </section>
-
-  </main>
-  <!-- ===== THE HOUSE TODAY ===== -->
-<section class="section section--light houseToday">
-  <div class="wrap houseToday__grid">
-
-    <!-- النص -->
-    <div class="houseToday__text">
-      <p class="kicker">اليوم</p>
-      <h2 class="title">البيت اليوم</h2>
-
-      <p class="houseToday__lead">
-        اليوم، بيت التحفيات لم يعد مجرد ذاكرة محفوظة،
-        بل مساحة حيّة تستقبل الزائر،
-        تحكي قصة بغداد عبر التحف،
-        وتفتح أبوابها لجيل جديد يرى في التراث مستقبلًا، لا ماضيًا فقط.
-      </p>
-
-      <div class="houseToday__cta">
-        <a href="./tour.html" class="btn">
-          الجولة الافتراضية لبيت التحفيات
-        </a>
-        <a href="./press.html" class="btn btn--ghost">
-          الصحافة والتغطيات
-        </a>
-      </div>
-     <!-- السلايدر (تحت النص) -->
-  <div class="houseToday__gallery">
-    <div class="htSlider" data-ht-slider>
-      <button class="htNav htPrev" type="button" aria-label="السابق" data-ht-prev>‹</button>
-
-      <div class="htViewport">
-        <div class="htTrack">
-          <button class="htSlide" type="button" data-ht-open="house1.jpg" aria-label="فتح الصورة"><img src="house1.jpg" alt=""></button>
-          <button class="htSlide" type="button" data-ht-open="house2.jpg" aria-label="فتح الصورة"><img src="house2.jpg" alt=""></button>
-          <button class="htSlide" type="button" data-ht-open="house3.jpg" aria-label="فتح الصورة"><img src="house3.jpg" alt=""></button>
-          <button class="htSlide" type="button" data-ht-open="house4.jpg" aria-label="فتح الصورة"><img src="house4.jpg" alt=""></button>
-          <button class="htSlide" type="button" data-ht-open="house5.jpg" aria-label="فتح الصورة"><img src="house5.jpg" alt=""></button>
-        </div>
-      </div>
-
-      <button class="htNav htNext" type="button" aria-label="التالي" data-ht-next>›</button>
-      <div class="htDots" data-ht-dots aria-label="مؤشر الصور"></div>
-    </div>
-  </div>
-
-</div>
-
-<!-- Lightbox -->
-<div class="htLightbox" hidden data-ht-lightbox>
-  <button class="htLbClose" type="button" aria-label="إغلاق" data-ht-close>×</button>
-  <img class="htLbImg" alt="صورة مكبرة" data-ht-img>
-</div>
-
-<!-- Lightbox -->
-<div class="htLightbox" hidden data-ht-lightbox>
-  <button class="htLbClose" type="button" aria-label="إغلاق" data-ht-close>×</button>
-  <img class="htLbImg" alt="صورة مكبرة" data-ht-img>
-</div>
-
-</section>
-
-</body>
-</html>
